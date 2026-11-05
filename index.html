@@ -1,322 +1,104 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100909">
-<title>Blood Hour | Player Wiki</title>
-<style>
-:root {
-  --bg:#100909; --panel:#1b1112; --red:#a51f2b;
-  --bright:#e04450; --text:#eee6e6; --muted:#aa999b;
-  --line:#392326;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;line-height:1.7;
-}
-header{
-  background:linear-gradient(135deg,#260d11,#100909 75%);
-  border-bottom:1px solid var(--line);
-  padding:24px 6%;position:relative;
-}
-.brand{font-size:13px;letter-spacing:5px;color:var(--bright)}
-header h1{font-size:clamp(38px,8vw,68px);margin:8px 0 0;letter-spacing:3px}
-header p{color:var(--muted);margin:0}
-nav{
-  display:flex;gap:10px;overflow-x:auto;padding:14px 5%;
-  background:#160d0e;border-bottom:1px solid var(--line);
-  position:sticky;top:0;z-index:5;
-}
-nav a{
-  color:var(--muted);text-decoration:none;white-space:nowrap;
-  padding:7px 12px;border:1px solid transparent;border-radius:5px;
-  font-size:13px;
-}
-nav a:hover{color:white;border-color:var(--red)}
-main{max-width:1050px;margin:auto;padding:28px 6%}
-section{padding:25px 0 38px;border-bottom:1px solid var(--line);scroll-margin-top:75px}
-h2{font-size:25px;color:var(--bright);margin:0 0 15px}
-h3{color:#f1c4c7;margin-bottom:5px}
-p{color:#d2c5c6}
-.hero{
-  padding:35px 25px;border:1px solid #54232a;border-radius:10px;
-  background:linear-gradient(120deg,#291014,#171011);
-}
-.hero h2{font-size:30px;color:#fff}
-.notice{
-  border-left:3px solid var(--bright);background:#241416;
-  padding:12px 16px;margin:18px 0;color:#e9d8d9;
-}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.card{
-  background:var(--panel);border:1px solid var(--line);
-  padding:17px;border-radius:8px;
-}
-.card h3{margin-top:0}
-.tag{
-  display:inline-block;color:#ffabb1;border:1px solid #71313a;
-  padding:2px 8px;border-radius:20px;font-size:11px;margin:3px 3px 3px 0;
-}
-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
-th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}
-th{color:#ff9ba3;background:#211315}
-td{color:#d8cbcc}
-ul{padding-left:22px;color:#d2c5c6}
-li{margin:5px 0}
-footer{
-  text-align:center;padding:30px;color:var(--muted);
-  border-top:1px solid var(--line);font-size:12px;
-}
-.small{font-size:13px;color:var(--muted)}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d12">
+  <meta name="description" content="The Blood Hour Player Archive — a field reference for the Awakened. Learn the rules, explore the towers, and meet the people of Shah Alam.">
+  <title>Blood Hour — Player Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Blood Hour home"><span class="brand-mark">✦</span><span>BLOOD HOUR<small>PLAYER ARCHIVE</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#rules">The Hour</a><a href="#stages">Progression</a><a href="#towers">Seven Towers</a><a href="#characters">Characters</a><a href="#factions">Factions</a>
+    </nav>
+    <a class="top-cta" href="#quickref">FIELD GUIDE <span>↗</span></a>
+  </header>
 
-<header>
-  <div class="brand">OFFICIAL PLAYER REFERENCE</div>
-  <h1>BLOOD HOUR</h1>
-  <p>Twelve hours. One hidden world. Seven towers.</p>
-</header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> SHAH ALAM, MALAYSIA · 2026</p>
+        <h1>WHEN THE<br><em>HOUR</em> TURNS<br>RED.</h1>
+        <p class="hero-copy">At 7:00 PM, the world stops. Twelve hours belong to the Awakened. This is your field reference to surviving what happens in between.</p>
+        <div class="hero-actions"><a class="button primary" href="#rules">UNDERSTAND THE HOUR <b>↓</b></a><a class="text-link" href="#characters">Meet the Awakened <span>→</span></a></div>
+      </div>
+      <div class="hero-side-note"><span class="vertical-line"></span><span>19:00:00 — 07:00:00</span><span class="vertical-line"></span></div>
+      <div class="hero-stamp"><span>BH</span><small>FIELD<br>ARCHIVE<br>01 / 07</small></div>
+      <div class="hero-bottom"><span>THE WORLD DOES NOT END.</span><span>IT WAITS.</span></div>
+    </section>
 
-<nav>
-  <a href="#world">World</a>
-  <a href="#rules">Rules</a>
-  <a href="#progression">Abilities</a>
-  <a href="#towers">Seven Towers</a>
-  <a href="#economy">Economy</a>
-  <a href="#factions">Factions</a>
-</nav>
+    <section class="ticker" aria-label="Important facts"><div>EVERY DAY <b>19:00</b></div><i>✦</i><div>TWELVE HOURS</div><i>✦</i><div>ONE SECOND OUTSIDE</div><i>✦</i><div>NO RESURRECTION</div></section>
 
-<main>
-  <div class="hero">
-    <span class="tag">PLAYER WIKI</span>
-    <span class="tag">EARTH · 2026</span>
-    <h2>Welcome to Blood Hour.</h2>
-    <p>
-      Every day, at exactly 19:00, the world stops.
-      The sky turns blood red. Humanity disappears into coffins.
-      And for twelve hours, another world comes alive.
-    </p>
-    <div class="notice">
-      This website is a player reference for the Blood Hour
-      interactive light novel. Some mysteries and story revelations
-      are intentionally excluded to avoid spoilers.
-    </div>
-  </div>
+    <section class="section intro-grid" id="rules">
+      <div><p class="eyebrow">01 / THE PHENOMENON</p><h2>A SECOND<br>THAT LASTS<br><em>TWELVE HOURS.</em></h2></div>
+      <div class="intro-copy"><p class="lead">Blood Hour is a daily twelve-hour interval hidden inside a single second of ordinary time.</p><p>At exactly 19:00:00, ordinary time freezes. The sky turns blood red, ordinary humans become coffins, and the world falls silent. Only the Awakened and entities of Blood Hour can move.</p><p>At 07:00 from the Awakened perspective, ordinary time resumes at 19:00:01. To everyone else, only one second has passed.</p></div>
+    </section>
 
-  <section id="world">
-    <h2>01 — The World</h2>
-    <p>
-      Blood Hour is a supernatural phenomenon that has existed
-      since 2016. The story takes place on real-world Earth in 2026,
-      with Shah Alam, Selangor, Malaysia as its primary setting.
-    </p>
-    <div class="grid">
-      <div class="card">
-        <h3>19:00:00</h3>
-        <p>Blood Hour begins. Ordinary time freezes and the sky turns blood red.</p>
-      </div>
-      <div class="card">
-        <h3>12 Hours</h3>
-        <p>Awakened experience twelve hours while the ordinary world remains frozen.</p>
-      </div>
-      <div class="card">
-        <h3>19:00:01</h3>
-        <p>The ordinary world resumes. To ordinary humans, only one second has passed.</p>
-      </div>
-    </div>
-    <h3>Who can move?</h3>
-    <ul>
-      <li>Awakened individuals can move and act.</li>
-      <li>Blood Hour entities can move and act.</li>
-      <li>Ordinary humans become identical coffins.</li>
-      <li>Animals, vehicles, liquids, fire and ordinary environmental activity freeze.</li>
-    </ul>
-  </section>
+    <section class="rules-cards">
+      <article class="rule-card"><span class="card-index">01</span><div class="rule-icon">◷</div><h3>The Daily Freeze</h3><p>Blood Hour begins at precisely 19:00:00 every day. Weather, vehicles, fire, liquids and ordinary activity are frozen in place.</p></article>
+      <article class="rule-card"><span class="card-index">02</span><div class="rule-icon">▣</div><h3>The Coffins</h3><p>Every ordinary human becomes an identical coffin bearing their identifying details. Their bodies return when normal time resumes.</p></article>
+      <article class="rule-card danger"><span class="card-index">03</span><div class="rule-icon">†</div><h3>Permanent Death</h3><p>Destroying an ordinary person's coffin kills them permanently. An Awakened who dies also becomes a coffin. There is no resurrection.</p></article>
+    </section>
 
-  <section id="rules">
-    <h2>02 — Survival Rules</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Human Coffins</h3>
-        <p>Each coffin has an identification plate containing the person's name, age, date of birth, biological sex and nationality.</p>
+    <section class="section progression" id="stages">
+      <div class="section-heading"><div><p class="eyebrow">02 / ABILITY DEVELOPMENT</p><h2>GROW STRONGER.<br><em>PAY ATTENTION.</em></h2></div><p>Abilities evolve through experience and use. There are no ability ranks; monster ranks are a separate system.</p></div>
+      <div class="stage-line">
+        <div class="stage"><span>01</span><h3>Awakening</h3><p>The first manifestation of an ability.</p></div>
+        <div class="stage"><span>02</span><h3>Emergence</h3><p>The ability begins to reveal further potential.</p></div>
+        <div class="stage"><span>03</span><h3>Ascension</h3><p>A significant step in ability development.</p></div>
+        <div class="stage"><span>04</span><h3>Apex</h3><p>The final stage before the ultimate threshold.</p></div>
+        <div class="stage final-stage"><span>05</span><h3>True Awakening</h3><p>An exceptional evolution requiring a special condition.</p></div>
       </div>
-      <div class="card">
-        <h3>Permanent Death</h3>
-        <p>Destroying an ordinary person's coffin causes permanent death. The body appears when Blood Hour ends.</p>
-      </div>
-      <div class="card">
-        <h3>Awakened Death</h3>
-        <p>An Awakened who dies becomes a coffin. Their death is permanent. Resurrection is not possible.</p>
-      </div>
-    </div>
-    <div class="notice">
-      Blood Hour is not exclusively a combat environment.
-      Awakened individuals may work, study, explore, trade, train,
-      socialize or rest.
-    </div>
-  </section>
+      <div class="tracker-note"><b>PLAYER TRACKERS</b><span>Experience: <strong>0 / 100</strong> per stage</span><span>Ability Use: <strong>0 / 300</strong> for the final threshold</span><small>Experience reaches 100 to advance through the first four stages. True Awakening additionally requires an Orb of Awakening and manual activation.</small></div>
+    </section>
 
-  <section id="progression">
-    <h2>03 — Ability Progression</h2>
-    <p>Every Awakened possesses an ability that can develop through five stages.</p>
-    <div class="grid">
-      <div class="card"><h3>01. Awakening</h3><p>The initial stage of an ability.</p></div>
-      <div class="card"><h3>02. Emergence</h3><p>The ability begins to develop further.</p></div>
-      <div class="card"><h3>03. Ascension</h3><p>A significant advancement in ability potential.</p></div>
-      <div class="card"><h3>04. Apex</h3><p>The final standard progression stage.</p></div>
-      <div class="card"><h3>05. True Awakening</h3><p>A special stage requiring specific conditions.</p></div>
-    </div>
-    <h3>Experience System</h3>
-    <ul>
-      <li>Experience is tracked from 0/100 to 100/100.</li>
-      <li>At 100/100, the next stage activates automatically and EXP resets.</li>
-      <li>Progression applies through Apex.</li>
-      <li>True Awakening requires Apex, Ability Use 300/300 and one Orb of Awakening.</li>
-      <li>The Orb must be manually used and is consumed permanently.</li>
-    </ul>
-    <h3>Ability Use</h3>
-    <p>Every genuine ability activation counts toward the 300-use requirement. Passive effects do not repeatedly count. Failed activations do not count.</p>
-    <h3>Training Experience</h3>
-    <table>
-      <tr><th>Training Intensity</th><th>EXP</th></tr>
-      <tr><td>Light</td><td>+1</td></tr>
-      <tr><td>Moderate</td><td>+2</td></tr>
-      <tr><td>Intensive</td><td>+3</td></tr>
-      <tr><td>Complex</td><td>+4</td></tr>
-      <tr><td>Extreme</td><td>+5</td></tr>
-    </table>
-    <p class="small">Only one training EXP award is granted per scene.</p>
-  </section>
+    <section class="section towers" id="towers">
+      <div class="section-heading"><div><p class="eyebrow">03 / THE DUNGEON NETWORK</p><h2>SEVEN TOWERS.<br><em>SEVEN TRIALS.</em></h2></div><p>Seven structures stand at fixed locations across Shah Alam. Each tower has its own environment, creatures and challenges.</p></div>
+      <div class="tower-grid">
+        <article class="tower-card"><span>I</span><div><small>UiTM Shah Alam</small><h3>Tower of Ruins</h3><p>Ancient civilisation · Ruins · Undead</p><b>07 FLOORS</b></div></article>
+        <article class="tower-card"><span>II</span><div><small>i-City, Section 7</small><h3>Tower of Glass</h3><p>Reflections · Crystals · Illusions</p><b>12 FLOORS</b></div></article>
+        <article class="tower-card"><span>III</span><div><small>National Botanical Gardens</small><h3>Tower of Verdant</h3><p>Mutated flora · Roots · Parasites</p><b>18 FLOORS</b></div></article>
+        <article class="tower-card"><span>IV</span><div><small>Shah Alam Lake Gardens</small><h3>Tower of Depths</h3><p>Deep sea · Aquatic ruins · Abyss</p><b>25 FLOORS</b></div></article>
+        <article class="tower-card"><span>V</span><div><small>Dataran Shah Alam</small><h3>Tower of Judgement</h3><p>Gothic · Infernal · Punishment</p><b>35 FLOORS</b></div></article>
+        <article class="tower-card"><span>VI</span><div><small>Shah Alam Sports Complex</small><h3>Tower of Iron</h3><p>Fortress · Machinery · War</p><b>50 FLOORS</b></div></article>
+        <article class="tower-card last-tower"><span>VII</span><div><small>Setia City / Setia Alam</small><h3>Tower of Silence</h3><p>Forgotten world · Void · Distortion</p><b>70 FLOORS</b></div></article>
+      </div>
+      <p class="tower-footnote">Tower access and floor progression are sequential. The first universal announcement concerns Floor 2 of the Tower of Ruins.</p>
+    </section>
 
-  <section id="towers">
-    <h2>04 — The Seven Towers</h2>
-    <p>Seven mysterious towers have appeared at fixed locations around Shah Alam. Tower progression is sequential.</p>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">TOWER I</span>
-        <h3>Tower of Ruins</h3>
-        <p>Location: UiTM Shah Alam</p>
-        <p>7 Floors · Ancient ruins, decay and undead.</p>
+    <section class="section character-section" id="characters">
+      <div class="section-heading"><div><p class="eyebrow">04 / THE AWAKENED</p><h2>FACES OF THE<br><em>RED HOUR.</em></h2></div><p>Students, workers and ordinary people caught in an extraordinary world. Select a profile to explore the available character artwork.</p></div>
+      <div class="character-tools"><label for="characterSearch">SEARCH THE ARCHIVE</label><input id="characterSearch" type="search" placeholder="Search character or ability…"><span id="characterCount">5 PROFILES</span></div>
+      <div class="character-grid" id="characterGrid">
+        <article class="character-card" data-name="Keisha Ellyana" data-ability="Echo Projection" data-slug="keisha"><button class="portrait-button" aria-label="Open Keisha Ellyana gallery"><img src="assets/characters/keisha/17477.png" alt="Keisha Ellyana character portrait"><span class="view-label">VIEW PROFILE ↗</span></button><div class="character-meta"><small>UITM STUDENT · INFLUENCER</small><h3>Keisha Ellyana</h3><p>Echo Projection</p></div></article>
+        <article class="character-card" data-name="Khairun Amara" data-ability="Vector Thread" data-slug="khairun"><button class="portrait-button" aria-label="Open Khairun Amara gallery"><img src="assets/characters/khairun/17498.png" alt="Khairun Amara character portrait"><span class="view-label">VIEW PROFILE ↗</span></button><div class="character-meta"><small>UITM STUDENT · LAW</small><h3>Khairun Amara</h3><p>Vector Thread</p></div></article>
+        <article class="character-card" data-name="Hani Marissa" data-ability="System Interface" data-slug="hani"><button class="portrait-button" aria-label="Open Hani Marissa gallery"><img src="assets/characters/hani/17514.png" alt="Hani Marissa character portrait"><span class="view-label">VIEW PROFILE ↗</span></button><div class="character-meta"><small>UITM STUDENT · COMPUTER SCIENCE</small><h3>Hani Marissa</h3><p>System Interface</p></div></article>
+        <article class="character-card" data-name="Putri Imelda" data-ability="Kinetic Burst" data-slug="putri"><button class="portrait-button" aria-label="Open Putri Imelda gallery"><img src="assets/characters/putri/17558.png" alt="Putri Imelda character portrait"><span class="view-label">VIEW PROFILE ↗</span></button><div class="character-meta"><small>UITM STUDENT · SPORT SCIENCE</small><h3>Putri Imelda</h3><p>Kinetic Burst</p></div></article>
+        <article class="character-card" data-name="Isyirah Amara" data-ability="Lucky Shift" data-slug="isyirah"><button class="portrait-button" aria-label="Open Isyirah Amara gallery"><img src="assets/characters/isyirah/17613.png" alt="Isyirah Amara character portrait"><span class="view-label">VIEW PROFILE ↗</span></button><div class="character-meta"><small>UITM STUDENT</small><h3>Isyirah Amara</h3><p>Lucky Shift</p></div></article>
       </div>
-      <div class="card">
-        <span class="tag">TOWER II</span>
-        <h3>Tower of Glass</h3>
-        <p>Location: i-City, Section 7</p>
-        <p>12 Floors · Glass, reflections, crystals and illusions.</p>
-      </div>
-      <div class="card">
-        <span class="tag">TOWER III</span>
-        <h3>Tower of Verdant</h3>
-        <p>Location: Taman Botani Negara Shah Alam</p>
-        <p>18 Floors · Mutated plants, roots and parasites.</p>
-      </div>
-      <div class="card">
-        <span class="tag">TOWER IV</span>
-        <h3>Tower of Depths</h3>
-        <p>Location: Taman Tasik Shah Alam, Section 14</p>
-        <p>25 Floors · Deep sea, aquatic creatures and abyssal ruins.</p>
-      </div>
-      <div class="card">
-        <span class="tag">TOWER V</span>
-        <h3>Tower of Judgement</h3>
-        <p>Location: Dataran Shah Alam</p>
-        <p>35 Floors · Gothic architecture and infernal judgement.</p>
-      </div>
-      <div class="card">
-        <span class="tag">TOWER VI</span>
-        <h3>Tower of Iron</h3>
-        <p>Location: Kompleks Sukan Shah Alam</p>
-        <p>50 Floors · Mechanical warfare and industrial fortresses.</p>
-      </div>
-      <div class="card">
-        <span class="tag">TOWER VII</span>
-        <h3>Tower of Silence</h3>
-        <p>Location: Setia City, Setia Alam</p>
-        <p>70 Floors · Forgotten worlds, endless void and distorted reality.</p>
-      </div>
-    </div>
-    <h3>Tower Progression</h3>
-    <ul>
-      <li>Floors unlock sequentially after their required objectives are completed.</li>
-      <li>Progression may require exploration, defeating guardians or completing a main challenge.</li>
-      <li>A progression seal must be activated to unlock the next floor.</li>
-      <li>A tower is completed after all required floors are explored and its Final Boss is defeated.</li>
-      <li>Completed towers disappear permanently.</li>
-    </ul>
-  </section>
+      <p class="gallery-note">Character gallery currently features the five submitted artwork sets. More profiles can be added as their artwork becomes available.</p>
+    </section>
 
-  <section id="economy">
-    <h2>05 — Economy & Equipment</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Blood Coin (BC)</h3>
-        <p>The supernatural currency used during Blood Hour.</p>
-        <p><strong>RM100 = 1 BC</strong></p>
-      </div>
-      <div class="card">
-        <h3>Currency Conversion</h3>
-        <p>RM can be converted into BC. BC cannot be converted back into RM.</p>
-      </div>
-      <div class="card">
-        <h3>Red Exchange</h3>
-        <p>A supernatural marketplace for buying, selling and trading goods and materials.</p>
-      </div>
-      <div class="card">
-        <h3>The Ember Anvil</h3>
-        <p>A blacksmith workshop for weapon repair, crafting and enhancement.</p>
-      </div>
-    </div>
-    <h3>Weapon Quality</h3>
-    <p>
-      Standard → Refined → Rare → Epic → Legendary → Mythical
-    </p>
-    <p class="small">
-      Weapon quality improves suitable characteristics. It does not
-      automatically grant unrelated abilities.
-    </p>
-    <h3>Important Equipment Rules</h3>
-    <ul>
-      <li>Personal weapons are bound to their owners.</li>
-      <li>Weapons materialize during Blood Hour and disappear when it ends.</li>
-      <li>Weapons cannot be carried into the ordinary world.</li>
-      <li>Materials can be sold, traded, crafted or used for repairs and enhancement.</li>
-    </ul>
-  </section>
+    <section class="section factions" id="factions">
+      <div class="section-heading"><div><p class="eyebrow">05 / GROUPS & ALIGNMENTS</p><h2>NOT EVERYONE<br><em>FIGHTS ALONE.</em></h2></div><p>Awakened form groups for different reasons. Their goals, methods and loyalties do not always align.</p></div>
+      <div class="faction-list"><article><span class="faction-symbol">✦</span><div><h3>Independent</h3><p>Awakened who operate alone or have not committed to a faction.</p></div><small>SELF-DIRECTED</small></article><article><span class="faction-symbol">⌖</span><div><h3>Truth Seeker</h3><p>A group pursuing information, answers and a deeper understanding of Blood Hour.</p></div><small>INVESTIGATION</small></article><article><span class="faction-symbol">◈</span><div><h3>Blood Cult</h3><p>An organised faction with its own agenda and approach to the phenomenon.</p></div><small>FACTION</small></article></div>
+    </section>
 
-  <section id="factions">
-    <h2>06 — Factions</h2>
-    <p>Different groups have emerged among the Awakened. Their goals, beliefs and methods are not necessarily the same.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>UiTM Student Group</h3>
-        <p>A group of students connected to UiTM Shah Alam, navigating survival and the mysteries of Blood Hour.</p>
-      </div>
-      <div class="card">
-        <h3>Truth Seeker</h3>
-        <p>A group seeking answers about Blood Hour, its origins and the truth behind the phenomenon.</p>
-      </div>
-      <div class="card">
-        <h3>Blood Cult</h3>
-        <p>A faction with its own ambitions and beliefs concerning Blood Hour.</p>
-      </div>
-    </div>
-    <div class="notice">
-      Faction membership does not determine an individual's morality,
-      strength or personal motivations.
-    </div>
-  </section>
+    <section class="section quickref" id="quickref"><p class="eyebrow">06 / KEEP THIS CLOSE</p><h2>FIELD <em>REFERENCE.</em></h2><div class="quick-grid"><div><small>START</small><b>19:00:00</b><span>Blood Hour begins</span></div><div><small>END</small><b>07:00:00</b><span>Blood Hour ends</span></div><div><small>OUTSIDE TIME</small><b>1 SECOND</b><span>Elapsed in normal world</span></div><div><small>CURRENCY</small><b>Blood Coin</b><span>RM 100 = 1 BC</span></div></div><p class="disclaimer">This archive is a player-facing reference. Information may expand as the story progresses. Spoiler-sensitive discoveries are intentionally excluded.</p></section>
+  </main>
 
-  <footer>
-    <strong>BLOOD HOUR</strong><br>
-    Official Player Reference Wiki<br>
-    <span class="small">Version 1.0 · 2026</span>
-  </footer>
-</main>
+  <footer><a class="brand" href="#home"><span class="brand-mark">✦</span><span>BLOOD HOUR<small>PLAYER ARCHIVE</small></span></a><span>THE HOUR PASSES. THE CONSEQUENCES REMAIN.</span><a href="#home">BACK TO TOP ↑</a></footer>
+
+  <div class="modal" id="galleryModal" aria-hidden="true"><div class="modal-backdrop" data-close></div><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" data-close aria-label="Close gallery">×</button><div class="modal-heading"><p class="eyebrow">CHARACTER ARTWORK</p><h2 id="modalTitle">Character</h2><span id="modalAbility"></span></div><div class="gallery-view"><button class="gallery-arrow" id="prevImage" aria-label="Previous image">‹</button><img id="galleryImage" src="" alt="Character artwork"><button class="gallery-arrow" id="nextImage" aria-label="Next image">›</button></div><div class="gallery-footer"><span id="imageIndex">01 / 10</span><span>USE ← → TO BROWSE</span></div></div></div>
+  <script src="script.js"></script>
 </body>
-  </html>
-  
+</html>
