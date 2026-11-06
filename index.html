@@ -1,422 +1,275 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b080b">
-  <meta name="description" content="Blood Hour Player Archive — A field guide to the Blood Hour phenomenon in Shah Alam, Malaysia.">
-  <title>Blood Hour — Player Archive</title>
+  <meta name="description" content="The Blood Hour Field Archive — a reference to the phenomenon, its rules, Awakened individuals and the Seven Towers of Shah Alam.">
+  <title>Blood Hour | Field Archive</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
-
-  <!-- HEADER -->
   <header class="site-header">
-    <a href="#" class="site-logo">✦ BLOOD HOUR</a>
+    <a class="site-logo" href="#top">BLOOD HOUR</a>
 
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      type="button"
-      aria-label="Toggle navigation"
-      aria-expanded="false"
-    >
-      ☰
-    </button>
+    <button class="menu-toggle" id="menuToggle" type="button"
+      aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
     <nav class="main-nav" id="mainNav">
       <a href="#rules">Rules</a>
-      <a href="#stages">Abilities</a>
+      <a href="#stages">Ability Stages</a>
       <a href="#towers">Towers</a>
       <a href="#characters">Characters</a>
       <a href="#factions">Factions</a>
-      <a href="#quickref">Field Guide</a>
+      <a href="#quickref">Quick Reference</a>
     </nav>
   </header>
 
-  <main>
-
-    <!-- HERO -->
+  <main id="top">
     <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">SHAH ALAM, SELANGOR · 2026</p>
-
-        <h1>
-          WHEN THE WORLD<br>
-          <span>BLEEDS RED.</span>
-        </h1>
-
-        <p class="hero-description">
-          Every evening at 19:00, ordinary time comes to a halt.
-          The sky turns crimson. Twelve hours belong to the Awakened.
+      <div class="hero-inner">
+        <p class="eyebrow">SHAH ALAM, SELANGOR · MALAYSIA · 2026</p>
+        <h1>WHEN THE WORLD<br><span>BLEEDS RED.</span></h1>
+        <p class="hero-copy">
+          Every evening at exactly 19:00, ordinary time comes to a halt.
+          The sky turns crimson, and twelve additional hours unfold beyond
+          the reach of the ordinary world.
         </p>
-
-        <a href="#rules" class="hero-button">
-          ENTER THE FIELD ARCHIVE ↗
-        </a>
+        <a class="hero-link" href="#introduction">EXPLORE THE FIELD ARCHIVE <span>↗</span></a>
+      </div>
+      <div class="hero-mark" aria-hidden="true">✦</div>
+      <div class="hero-bottom">
+        <span>AN UNOFFICIAL PLAYER REFERENCE</span>
+        <span>EST. 2016 · SHAH ALAM</span>
       </div>
     </section>
 
-    <!-- INTRODUCTION -->
-    <section class="content-section" id="introduction">
-      <div class="section-heading">
-        <p class="eyebrow">THE PHENOMENON</p>
-        <h2>A World Beyond Ordinary Time</h2>
+    <section class="content-section introduction" id="introduction">
+      <div class="section-kicker">THE PHENOMENON · 01</div>
+      <div class="intro-layout">
+        <h2>A World<br>Beyond Ordinary Time</h2>
+        <div class="intro-copy">
+          <p>
+            Blood Hour is a supernatural phenomenon that exists alongside
+            ordinary reality. It first appeared in 2016. By 2026, it has
+            continued for approximately ten years, remaining unknown to most
+            people living their normal lives.
+          </p>
+          <p>
+            Every day at exactly 19:00:00, ordinary time stops. The sky turns
+            blood red, ordinary humans become identical coffins, and the
+            environment is suspended in place. Only Awakened individuals and
+            entities associated with Blood Hour remain active.
+          </p>
+          <p>
+            Those who experience it receive twelve additional hours to move,
+            work, investigate, explore, trade, fight or simply live. When the
+            phenomenon ends, ordinary time resumes at 19:00:01. Only one
+            second has passed in the world outside.
+          </p>
+        </div>
       </div>
-
-      <p>
-        Blood Hour is a mysterious phenomenon that occurs every day at exactly
-        19:00:00. Ordinary time comes to a standstill, the sky turns blood red,
-        and the world enters a twelve-hour period governed by unfamiliar rules.
-      </p>
-
-      <p>
-        Only the Awakened and entities associated with Blood Hour remain active.
-        For everyone else, the world is frozen in the moment the phenomenon begins.
-      </p>
     </section>
 
-    <!-- RULES -->
     <section class="content-section" id="rules">
       <div class="section-heading">
-        <p class="eyebrow">SURVIVAL KNOWLEDGE · 01</p>
+        <div class="section-kicker">SURVIVAL KNOWLEDGE · 02</div>
         <h2>The Rules of Blood Hour</h2>
         <p>
-          Knowledge is the difference between survival and permanent death.
-          Select a record to read its details.
+          Blood Hour follows a set of consistent supernatural rules. These
+          conditions affect the environment, ordinary humans, Awakened
+          individuals and the consequences of death.
         </p>
       </div>
-
-      <div class="info-grid">
-
-        <article class="info-card">
-          <span class="card-number">01</span>
-          <h3>Daily Activation</h3>
-          <p>Blood Hour begins every day at exactly 19:00:00 and lasts twelve hours for participants.</p>
-          <span class="card-read">READ RECORD ↗</span>
-        </article>
-
-        <article class="info-card">
-          <span class="card-number">02</span>
-          <h3>Time Suspension</h3>
-          <p>Ordinary time stops. Only one second passes outside while Blood Hour runs its course.</p>
-          <span class="card-read">READ RECORD ↗</span>
-        </article>
-
-        <article class="info-card">
-          <span class="card-number">03</span>
-          <h3>The Crimson Sky</h3>
-          <p>The sky changes to a blood-red colour whenever the phenomenon begins.</p>
-          <span class="card-read">READ RECORD ↗</span>
-        </article>
-
-        <article class="info-card">
-          <span class="card-number">04</span>
-          <h3>Frozen Environment</h3>
-          <p>Ordinary people, animals and environmental activity remain frozen.</p>
-          <span class="card-read">READ RECORD ↗</span>
-        </article>
-
-        <article class="info-card">
-          <span class="card-number">05</span>
-          <h3>The Coffins</h3>
-          <p>Ordinary humans are transformed into identical coffins bearing identity plates.</p>
-          <span class="card-read">READ RECORD ↗</span>
-        </article>
-
-        <article class="info-card">
-          <span class="card-number">06</span>
-          <h3>Permanent Death</h3>
-          <p>Destroying an ordinary human's coffin results in permanent death.</p>
-          <span class="card-read">READ RECORD ↗</span>
-        </article>
-
-        <article class="info-card">
-          <span class="card-number">07</span>
-          <h3>The Awakened</h3>
-          <p>Awakened individuals can move and act during Blood Hour.</p>
-          <span class="card-read">READ RECORD ↗</span>
-        </article>
-
-        <article class="info-card">
-          <span class="card-number">08</span>
-          <h3>No Resurrection</h3>
-          <p>Death during Blood Hour is final. There is no known resurrection.</p>
-          <span class="card-read">READ RECORD ↗</span>
-        </article>
-
-      </div>
+      <div class="info-grid" id="rulesGrid"></div>
     </section>
 
-    <!-- ABILITY STAGES -->
-    <section class="content-section" id="stages">
+    <section class="content-section stages-section" id="stages">
       <div class="section-heading">
-        <p class="eyebrow">POWER DEVELOPMENT · 02</p>
+        <div class="section-kicker">POWER DEVELOPMENT · 03</div>
         <h2>The Five Ability Stages</h2>
         <p>
-          Every Awakened ability follows a recognised development path.
-          Select a stage to read its overview.
+          An Awakened ability develops through five recognised stages.
+          Progression is measured through experience and genuine ability use,
+          with a separate requirement for the final stage.
         </p>
       </div>
-
-      <div class="stage-list">
-
-        <article class="stage-card">
-          <span class="stage-number">I</span>
-          <h3>Awakening</h3>
-          <p>The first manifestation of an ability.</p>
-          <span class="card-read">READ STAGE ↗</span>
-        </article>
-
-        <article class="stage-card">
-          <span class="stage-number">II</span>
-          <h3>Emergence</h3>
-          <p>A further phase of ability development.</p>
-          <span class="card-read">READ STAGE ↗</span>
-        </article>
-
-        <article class="stage-card">
-          <span class="stage-number">III</span>
-          <h3>Ascension</h3>
-          <p>A higher level of ability development.</p>
-          <span class="card-read">READ STAGE ↗</span>
-        </article>
-
-        <article class="stage-card">
-          <span class="stage-number">IV</span>
-          <h3>Apex</h3>
-          <p>An advanced stage of ability development.</p>
-          <span class="card-read">READ STAGE ↗</span>
-        </article>
-
-        <article class="stage-card">
-          <span class="stage-number">V</span>
-          <h3>True Awakening</h3>
-          <p>The highest recognised ability stage.</p>
-          <span class="card-read">READ STAGE ↗</span>
-        </article>
-
+      <div class="stage-grid" id="stagesGrid"></div>
+      <div class="stage-note">
+        <strong>IMPORTANT</strong>
+        <p>
+          Ability progression stages are not ability ranks. Abilities do not
+          use an F–EX ranking system. Monster ranks are a separate
+          classification and do not determine an individual's ability stage.
+        </p>
       </div>
-
-      <p class="section-note">
-        Ability stages are separate from monster classification.
-      </p>
     </section>
 
-    <!-- TOWERS -->
-    <section class="content-section" id="towers">
+    <section class="content-section towers-section" id="towers">
       <div class="section-heading">
-        <p class="eyebrow">SHAH ALAM LANDMARKS · 03</p>
+        <div class="section-kicker">SHAH ALAM LANDMARKS · 04</div>
         <h2>The Seven Towers</h2>
         <p>
-          Seven mysterious structures have appeared across Shah Alam.
-          Their environments are unlike anything in the ordinary world.
-          Select a tower to read its public archive entry.
+          Seven mysterious structures have appeared at recognisable locations
+          around Shah Alam. Each possesses its own visual identity,
+          atmosphere and environment. Select a tower to read its public
+          archive entry.
         </p>
       </div>
-
-      <div class="tower-grid">
-
-        <article class="tower-card">
-          <span class="tower-index">01</span>
-          <h3>Tower of Ruins</h3>
-          <p class="tower-location">UiTM Shah Alam</p>
-          <p>Ancient Civilisation · Ruins · Decay · Undead</p>
-          <span class="access-label">Ground Floor Access</span>
-          <span class="card-read">READ ARCHIVE ↗</span>
-        </article>
-
-        <article class="tower-card">
-          <span class="tower-index">02</span>
-          <h3>Tower of Glass</h3>
-          <p class="tower-location">i-City, Section 7</p>
-          <p>Glass · Reflections · Crystals · Illusions</p>
-          <span class="access-label">Ground Floor Access</span>
-          <span class="card-read">READ ARCHIVE ↗</span>
-        </article>
-
-        <article class="tower-card">
-          <span class="tower-index">03</span>
-          <h3>Tower of Verdant</h3>
-          <p class="tower-location">Taman Botani Negara Shah Alam</p>
-          <p>Nature · Mutated Plants · Roots · Parasites</p>
-          <span class="access-label">Ground Floor Access</span>
-          <span class="card-read">READ ARCHIVE ↗</span>
-        </article>
-
-        <article class="tower-card">
-          <span class="tower-index">04</span>
-          <h3>Tower of Depths</h3>
-          <p class="tower-location">Taman Tasik Shah Alam, Section 14</p>
-          <p>Deep Sea · Aquatic Creatures · Underwater Ruins · Abyss</p>
-          <span class="access-label">Ground Floor Access</span>
-          <span class="card-read">READ ARCHIVE ↗</span>
-        </article>
-
-        <article class="tower-card">
-          <span class="tower-index">05</span>
-          <h3>Tower of Judgement</h3>
-          <p class="tower-location">Dataran Shah Alam</p>
-          <p>Gothic Architecture · Infernal Themes</p>
-          <span class="access-label">Ground Floor Access</span>
-          <span class="card-read">READ ARCHIVE ↗</span>
-        </article>
-
-        <article class="tower-card">
-          <span class="tower-index">06</span>
-          <h3>Tower of Iron</h3>
-          <p class="tower-location">Kompleks Sukan Shah Alam</p>
-          <p>Ancient Fortress · Mechanical Industry · War Machines</p>
-          <span class="access-label">Ground Floor Access</span>
-          <span class="card-read">READ ARCHIVE ↗</span>
-        </article>
-
-        <article class="tower-card">
-          <span class="tower-index">07</span>
-          <h3>Tower of Silence</h3>
-          <p class="tower-location">Setia City, Setia Alam</p>
-          <p>Forgotten World · Endless Void · Distorted Reality</p>
-          <span class="access-label">Ground Floor Access</span>
-          <span class="card-read">READ ARCHIVE ↗</span>
-        </article>
-
-      </div>
-
-      <p class="section-note">
-        This public archive intentionally excludes undisclosed tower information.
+      <div class="tower-grid" id="towerGrid"></div>
+      <p class="public-note">
+        Public archive entries intentionally exclude undisclosed tower
+        progression and confidential information.
       </p>
     </section>
 
-    <!-- CHARACTERS -->
-    <section class="content-section character-section" id="characters">
+    <section class="content-section characters-section" id="characters">
       <div class="section-heading">
-        <p class="eyebrow">KNOWN INDIVIDUALS · 04</p>
+        <div class="section-kicker">KNOWN INDIVIDUALS · 05</div>
         <h2>Faces of the Red Hour</h2>
         <p>
-          Students, workers and ordinary people caught in an extraordinary world.
-          Select a profile to explore the available character information.
+          Students, professionals and unusual entities have found themselves
+          connected to Blood Hour. Explore their public profiles, personal
+          characteristics and established abilities.
         </p>
       </div>
 
       <div class="character-tools">
-        <input
-          type="search"
-          id="characterSearch"
-          placeholder="Search character or ability..."
-          aria-label="Search characters"
-        >
-        <p id="characterCount">18 PROFILES</p>
+        <input type="search" id="characterSearch"
+          placeholder="Search by name, ability or occupation..."
+          aria-label="Search characters">
+        <span id="characterCount">18 PROFILES</span>
       </div>
 
-      <div id="characterGrid" class="character-grid"></div>
+      <div class="character-filters" id="characterFilters"></div>
+      <div class="character-grid" id="characterGrid"></div>
     </section>
 
-    <!-- FACTIONS -->
-    <section class="content-section" id="factions">
+    <section class="content-section factions-section" id="factions">
       <div class="section-heading">
-        <p class="eyebrow">GROUPS AND ORGANISATIONS · 05</p>
+        <div class="section-kicker">GROUPS AND ORGANISATIONS · 06</div>
         <h2>Known Factions</h2>
         <p>
-          Different groups have emerged as the world adapts to Blood Hour.
-          Select a faction to read its public introduction.
+          Blood Hour has brought different groups and individuals into
+          contact. Their motivations, methods and relationships with the
+          phenomenon are not always the same. Select a group to read its
+          public introduction.
+        </p>
+      </div>
+      <div class="faction-grid" id="factionGrid"></div>
+    </section>
+
+    <section class="content-section reference-section" id="quickref">
+      <div class="section-heading">
+        <div class="section-kicker">FIELD REFERENCE · 07</div>
+        <h2>Essential Information</h2>
+        <p>
+          A quick overview of the most important figures and systems used
+          throughout Blood Hour.
         </p>
       </div>
 
-      <div class="faction-grid">
-
-        <article class="faction-card">
-          <h3>UiTM Student Group</h3>
-          <p>Six UiTM students connected through the events of Blood Hour.</p>
-          <span class="card-read">READ FACTION ↗</span>
-        </article>
-
-        <article class="faction-card">
-          <h3>Truth Seeker</h3>
-          <p>A group seeking information and understanding about Blood Hour.</p>
-          <span class="card-read">READ FACTION ↗</span>
-        </article>
-
-        <article class="faction-card">
-          <h3>Blood Cult</h3>
-          <p>An organisation associated with Blood Hour and its darker aspects.</p>
-          <span class="card-read">READ FACTION ↗</span>
-        </article>
-
-        <article class="faction-card">
-          <h3>Blood Hour Entities</h3>
-          <p>Non-human individuals encountered within the Blood Hour environment.</p>
-          <span class="card-read">READ FACTION ↗</span>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- QUICK REFERENCE -->
-    <section class="content-section" id="quickref">
-      <div class="section-heading">
-        <p class="eyebrow">FIELD REFERENCE · 06</p>
-        <h2>Essential Information</h2>
-        <p>Select a record to read more about the basic field reference.</p>
-      </div>
-
       <div class="reference-grid">
-
         <article class="reference-card">
-          <h3>Activation Time</h3>
-          <p class="reference-value">19:00:00</p>
-          <p>Every day</p>
-          <span class="card-read">READ RECORD ↗</span>
+          <span class="reference-label">ACTIVATION</span>
+          <strong>19:00:00</strong>
+          <p>Every day, without exception.</p>
         </article>
-
         <article class="reference-card">
-          <h3>Duration</h3>
-          <p class="reference-value">12 Hours</p>
-          <p>For participants</p>
-          <span class="card-read">READ RECORD ↗</span>
+          <span class="reference-label">EXPERIENCED DURATION</span>
+          <strong>12 Hours</strong>
+          <p>For Awakened participants.</p>
         </article>
-
         <article class="reference-card">
-          <h3>Normal Time</h3>
-          <p class="reference-value">1 Second</p>
-          <p>Passes outside</p>
-          <span class="card-read">READ RECORD ↗</span>
+          <span class="reference-label">OUTSIDE TIME</span>
+          <strong>1 Second</strong>
+          <p>Passes before normal time resumes.</p>
         </article>
-
         <article class="reference-card">
-          <h3>Currency</h3>
-          <p class="reference-value">Blood Coin</p>
-          <p>BC</p>
-          <span class="card-read">READ RECORD ↗</span>
+          <span class="reference-label">CURRENCY</span>
+          <strong>Blood Coin</strong>
+          <p>Official abbreviation: BC.</p>
         </article>
-
       </div>
 
-      <article class="currency-panel readable-card" tabindex="0" role="button">
-        <h3>Blood Coin Exchange Rate</h3>
-        <p class="reference-value">RM100 = 1 BC</p>
-        <p>Malaysian Ringgit can be converted into Blood Coins. Blood Coins cannot be converted back into Malaysian Ringgit.</p>
-        <span class="card-read">READ RECORD ↗</span>
+      <article class="currency-panel">
+        <div>
+          <span class="reference-label">FIXED EXCHANGE RATE</span>
+          <h3>Blood Coin Economy</h3>
+          <strong class="exchange-rate">RM100 <span>=</span> 1 BC</strong>
+        </div>
+        <div class="currency-copy">
+          <p>
+            Blood Coin is the official currency used within the Blood Hour
+            economy. It exists as a supernatural digital balance associated
+            with an Awakened individual's Blood Hour identity.
+          </p>
+          <p>
+            Malaysian Ringgit can be converted into Blood Coin, but Blood Coin
+            cannot be converted back into Malaysian Ringgit. BC has no direct
+            purchasing value in ordinary life once Blood Hour ends.
+          </p>
+          <p>
+            Balances persist between Blood Hour sessions. Transactions,
+            purchases, sales, crafting expenses and material ownership remain
+            subject to the established economy.
+          </p>
+        </div>
       </article>
-    </section>
 
+      <div class="reference-details">
+        <article>
+          <h3>The Coffin System</h3>
+          <p>
+            Ordinary humans transform into identical coffins when Blood Hour
+            begins. Each coffin carries an identity plate recording the
+            person's full name, age, date of birth, biological sex and
+            nationality.
+          </p>
+        </article>
+        <article>
+          <h3>Awakened</h3>
+          <p>
+            Awakened individuals can move and act during Blood Hour. Their
+            abilities may support combat, defence, healing, mobility,
+            awareness, investigation or other forms of survival.
+          </p>
+        </article>
+        <article>
+          <h3>Permanent Consequences</h3>
+          <p>
+            Death during Blood Hour is permanent. Destroying an ordinary
+            person's coffin causes that person's death. The established
+            system provides no resurrection.
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <p class="footer-title">✦ BLOOD HOUR ✦</p>
-    <p>PLAYER ARCHIVE · SHAH ALAM, MALAYSIA · 2026</p>
-    <p class="footer-note">
-      An unofficial player reference archive. Information may be incomplete.
+    <div class="footer-brand">BLOOD HOUR</div>
+    <p>SHAH ALAM, SELANGOR, MALAYSIA · 2026</p>
+    <p class="footer-small">
+      An unofficial player reference archive. Public information only.
     </p>
   </footer>
 
+  <div class="reading-modal" id="readingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="reading-panel" role="dialog" aria-modal="true"
+      aria-labelledby="modalTitle">
+      <button class="modal-close" type="button"
+        aria-label="Close window" data-close-modal>×</button>
+      <div class="modal-content" id="modalContent"></div>
+    </section>
+  </div>
 </body>
 </html>
