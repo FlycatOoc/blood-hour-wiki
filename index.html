@@ -3,46 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b080b">
-  <meta name="description" content="Blood Hour Field Archive — a public reference to the phenomenon, its rules, Awakened individuals and the Seven Towers of Shah Alam.">
+  <meta name="theme-color" content="#090609">
+  <meta name="description" content="Blood Hour — a public field archive of the hidden twelve-hour phenomenon in Shah Alam.">
   <title>Blood Hour | Field Archive</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="moon" aria-hidden="true"></div>
+  <div class="graveyard" aria-hidden="true">
+    <span class="coffin coffin-one"></span><span class="coffin coffin-two"></span>
+    <span class="coffin coffin-three"></span><span class="coffin coffin-four"></span>
+    <span class="coffin coffin-five"></span>
+  </div>
+
   <header class="site-header">
     <a class="site-logo" href="#top">BLOOD HOUR</a>
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <nav class="main-nav" id="mainNav">
-      <a href="#rules">Rules</a>
-      <a href="#stages">Ability Stages</a>
-      <a href="#towers">Towers</a>
-      <a href="#characters">Characters</a>
-      <a href="#factions">Factions</a>
-      <a href="#quickref">Quick Reference</a>
+      <a href="#rules">Rules</a><a href="#stages">Ability Stages</a>
+      <a href="#towers">Towers</a><a href="#characters">Characters</a>
+      <a href="#factions">Factions</a><a href="#quickref">Quick Reference</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
       <div class="hero-inner">
-        <p class="eyebrow">SHAH ALAM, SELANGOR · MALAYSIA · 2026</p>
+        <p class="eyebrow">SHAH ALAM · SELANGOR · MALAYSIA · 2026</p>
         <h1>WHEN THE WORLD<br><span>BLEEDS RED.</span></h1>
-        <p class="hero-copy">
-          Every day at exactly 19:00:00, ordinary time stops.
-          The sky turns blood red, and twelve additional hours unfold
-          beyond the reach of the ordinary world.
-        </p>
+        <p class="hero-copy">Every day at exactly 19:00:00, ordinary time stops. The sky turns blood red, and twelve additional hours unfold beyond the reach of the ordinary world.</p>
         <a class="hero-link" href="#introduction">EXPLORE THE FIELD ARCHIVE <span>↗</span></a>
       </div>
-      <div class="hero-mark" aria-hidden="true">✦</div>
-      <div class="hero-bottom">
-        <span>UNOFFICIAL PUBLIC REFERENCE</span>
-        <span>EST. 2016 · SHAH ALAM</span>
-      </div>
+      <div class="hero-bottom"><span>UNOFFICIAL PUBLIC REFERENCE</span><span>EST. 2016 · SHAH ALAM</span></div>
     </section>
 
     <section class="content-section introduction" id="introduction">
@@ -50,234 +46,71 @@
       <div class="intro-layout">
         <h2>A World<br>Beyond Ordinary Time</h2>
         <div class="intro-copy">
-          <p>
-            Blood Hour is a supernatural phenomenon that exists alongside
-            ordinary reality. It first appeared in 2016. By 2026, it has
-            existed for approximately ten years, remaining unknown to most
-            people living their normal lives.
-          </p>
-          <p>
-            Every day at exactly 19:00:00, ordinary time stops. The sky turns
-            blood red, ordinary humans transform into identical coffins,
-            and the environment is suspended in place. Only Awakened
-            individuals and Blood Hour entities remain active.
-          </p>
-          <p>
-            Those who experience it receive twelve additional hours to move,
-            work, investigate, explore, trade, fight or simply live.
-            When the phenomenon ends, ordinary time resumes at exactly
-            19:00:01. Only one second has passed outside Blood Hour.
-          </p>
+          <p>Blood Hour is a supernatural phenomenon that first appeared in 2016. By 2026, it has existed for approximately ten years, remaining unknown to most people living their ordinary lives.</p>
+          <p>Every day at exactly 19:00:00, ordinary time stops. The sky turns blood red, ordinary humans transform into identical coffins, and the environment is suspended in place. Only Awakened individuals and Blood Hour entities remain active.</p>
+          <p>Those who experience it receive twelve additional hours. When the phenomenon ends, ordinary time resumes at exactly 19:00:01. Only one second has passed outside Blood Hour.</p>
         </div>
       </div>
     </section>
 
     <section class="content-section" id="rules">
-      <div class="section-heading">
-        <div class="section-kicker">SURVIVAL KNOWLEDGE · 02</div>
-        <h2>The Rules of Blood Hour</h2>
-        <p>
-          The phenomenon follows consistent rules. These conditions affect
-          ordinary humans, Awakened individuals, the environment and the
-          consequences of death.
-        </p>
-      </div>
+      <div class="section-heading"><div class="section-kicker">SURVIVAL KNOWLEDGE · 02</div><h2>The Rules of Blood Hour</h2><p>The established conditions governing ordinary humans, Awakened individuals, the frozen environment and death.</p></div>
       <div class="info-grid" id="rulesGrid"></div>
     </section>
 
     <section class="content-section stages-section" id="stages">
-      <div class="section-heading">
-        <div class="section-kicker">ABILITY DEVELOPMENT · 03</div>
-        <h2>The Five Ability Stages</h2>
-        <p>
-          Awakened abilities develop through five progression stages.
-          Ability stages are not ability ranks.
-        </p>
-      </div>
+      <div class="section-heading"><div class="section-kicker">ABILITY DEVELOPMENT · 03</div><h2>The Five Ability Stages</h2><p>Abilities develop through five progression stages. These stages are not ability ranks.</p></div>
       <div class="stage-grid" id="stagesGrid"></div>
-      <div class="stage-note">
-        <strong>IMPORTANT DISTINCTION</strong>
-        <p>
-          Abilities do not have F–EX ranks. The five stages describe ability
-          progression only. Monster ranks are a separate classification
-          and do not determine an individual's ability stage.
-        </p>
-      </div>
+      <div class="stage-note"><strong>IMPORTANT DISTINCTION</strong><p>Abilities do not have F–EX ranks. Monster ranks are a separate classification and do not determine an individual's ability stage.</p></div>
     </section>
 
     <section class="content-section towers-section" id="towers">
-      <div class="section-heading">
-        <div class="section-kicker">SHAH ALAM LANDMARKS · 04</div>
-        <h2>The Seven Towers</h2>
-        <p>
-          Seven mysterious structures are connected to recognisable
-          locations around Shah Alam. Each has its own identity, theme
-          and atmosphere. Select a tower to read its public archive entry.
-        </p>
-      </div>
+      <div class="section-heading"><div class="section-kicker">SHAH ALAM LANDMARKS · 04</div><h2>The Seven Towers</h2><p>Seven mysterious structures are connected to recognisable locations around Shah Alam. Select a tower to read its public archive entry.</p></div>
       <div class="tower-grid" id="towerGrid"></div>
-      <p class="public-note">
-        This public archive intentionally withholds undisclosed tower
-        progression, encounters, rewards and story revelations.
-      </p>
+      <p class="public-note">This public archive intentionally withholds tower progression, floor information, encounters, rewards and story revelations.</p>
     </section>
 
     <section class="content-section characters-section" id="characters">
-      <div class="section-heading">
-        <div class="section-kicker">KNOWN INDIVIDUALS · 05</div>
-        <h2>Faces of the Red Hour</h2>
-        <p>
-          Students, professionals and entities have become connected
-          to Blood Hour. Select a profile to explore established
-          characteristics, abilities and equipment.
-        </p>
-      </div>
-
-      <div class="character-tools">
-        <input type="search" id="characterSearch"
-          placeholder="Search by name, ability, role or occupation..."
-          aria-label="Search characters">
-        <span id="characterCount">18 PROFILES</span>
-      </div>
-
+      <div class="section-heading"><div class="section-kicker">KNOWN INDIVIDUALS · 05</div><h2>Faces of the Red Hour</h2><p>Established Awakened individuals and Blood Hour entities. Select a profile to read confirmed public information.</p></div>
+      <div class="character-tools"><input type="search" id="characterSearch" placeholder="Search by name, ability, role or weapon..." aria-label="Search characters"><span id="characterCount">18 PROFILES</span></div>
       <div class="character-filters" id="characterFilters"></div>
       <div class="character-grid" id="characterGrid"></div>
     </section>
 
     <section class="content-section factions-section" id="factions">
-      <div class="section-heading">
-        <div class="section-kicker">GROUPS AND ORGANISATIONS · 06</div>
-        <h2>Known Factions</h2>
-        <p>
-          Different groups and entities have different relationships
-          with Blood Hour. Select an entry to read its public introduction.
-        </p>
-      </div>
+      <div class="section-heading"><div class="section-kicker">GROUPS AND ORGANISATIONS · 06</div><h2>Known Factions</h2><p>Groups and entities with established connections to Blood Hour.</p></div>
       <div class="faction-grid" id="factionGrid"></div>
     </section>
 
     <section class="content-section reference-section" id="quickref">
-      <div class="section-heading">
-        <div class="section-kicker">FIELD REFERENCE · 07</div>
-        <h2>Essential Information</h2>
-        <p>A quick reference to the phenomenon and its established systems.</p>
-      </div>
-
+      <div class="section-heading"><div class="section-kicker">FIELD REFERENCE · 07</div><h2>Essential Information</h2><p>A concise reference to established Blood Hour systems.</p></div>
       <div class="reference-grid">
-        <article class="reference-card">
-          <span class="reference-label">DAILY ACTIVATION</span>
-          <strong>19:00:00</strong>
-          <p>Blood Hour begins every day.</p>
-        </article>
-        <article class="reference-card">
-          <span class="reference-label">EXPERIENCED DURATION</span>
-          <strong>12 Hours</strong>
-          <p>For Awakened participants.</p>
-        </article>
-        <article class="reference-card">
-          <span class="reference-label">OUTSIDE TIME</span>
-          <strong>1 Second</strong>
-          <p>Normal time resumes at 19:00:01.</p>
-        </article>
-        <article class="reference-card">
-          <span class="reference-label">CURRENCY</span>
-          <strong>Blood Coin</strong>
-          <p>Official abbreviation: BC.</p>
-        </article>
+        <article class="reference-card"><span class="reference-label">DAILY ACTIVATION</span><strong>19:00:00</strong><p>Blood Hour begins every day.</p></article>
+        <article class="reference-card"><span class="reference-label">EXPERIENCED DURATION</span><strong>12 Hours</strong><p>For those active during Blood Hour.</p></article>
+        <article class="reference-card"><span class="reference-label">OUTSIDE TIME</span><strong>1 Second</strong><p>Normal time resumes at 19:00:01.</p></article>
+        <article class="reference-card"><span class="reference-label">CURRENCY</span><strong>Blood Coin</strong><p>Official abbreviation: BC.</p></article>
       </div>
-
       <article class="currency-panel">
-        <div>
-          <span class="reference-label">FIXED EXCHANGE RATE</span>
-          <h3>Blood Coin Economy</h3>
-          <strong class="exchange-rate">RM100 <span>=</span> 1 BC</strong>
-        </div>
-        <div class="currency-copy">
-          <p>
-            Blood Coin (BC) is the official currency used within the
-            Blood Hour economy. It exists as a supernatural digital
-            balance associated with an Awakened individual's identity.
-          </p>
-          <p>
-            Malaysian Ringgit can be converted into BC, but BC cannot
-            be converted back into Malaysian Ringgit. BC has no direct
-            purchasing value in ordinary life.
-          </p>
-          <p>
-            BC balances persist between Blood Hour sessions.
-            Transactions, purchases, sales, crafting expenses and
-            material ownership must remain consistent.
-          </p>
-        </div>
+        <div><span class="reference-label">FIXED EXCHANGE RATE</span><h3>Blood Coin Economy</h3><strong class="exchange-rate">RM100 <span>=</span> 1 BC</strong></div>
+        <div class="currency-copy"><p>Blood Coin (BC) is the official currency within the Blood Hour economy. It exists as a supernatural digital balance associated with an Awakened individual's identity.</p><p>Malaysian Ringgit can be converted into BC, but BC cannot be converted back into Malaysian Ringgit. BC has no direct purchasing value in ordinary life.</p><p>Balances persist between Blood Hour sessions. Transactions, purchases, sales, crafting expenses and material ownership must remain consistent.</p></div>
       </article>
-
       <div class="reference-details">
-        <article>
-          <h3>The Coffin System</h3>
-          <p>
-            Ordinary humans transform into identical coffins when
-            Blood Hour begins. Each coffin carries an identity plate
-            containing the person's full name, age, date of birth,
-            biological sex and nationality.
-          </p>
-        </article>
-        <article>
-          <h3>Awakened</h3>
-          <p>
-            Awakened individuals remain active during Blood Hour.
-            Their abilities can support combat, defence, mobility,
-            awareness, investigation, healing or other forms of survival.
-          </p>
-        </article>
-        <article>
-          <h3>Permanent Death</h3>
-          <p>
-            An Awakened who dies during Blood Hour remains dead.
-            Destroying an ordinary person's coffin also causes
-            permanent death. Resurrection is impossible through
-            the established system.
-          </p>
-        </article>
-        <article>
-          <h3>Ability Use</h3>
-          <p>
-            Every genuine ability activation counts as one use.
-            Failed activations do not count. Passive ongoing effects
-            do not repeatedly count without a new activation.
-          </p>
-        </article>
-        <article>
-          <h3>True Awakening</h3>
-          <p>
-            True Awakening requires the Apex stage, 300 Ability Uses
-            and one Orb of Awakening. The Orb must be manually activated
-            and is consumed immediately.
-          </p>
-        </article>
-        <article>
-          <h3>Personal Weapons</h3>
-          <p>
-            Established personal weapons materialise during Blood Hour
-            and dematerialise when it ends. They cannot be carried
-            into ordinary time.
-          </p>
-        </article>
+        <article><h3>The Coffin System</h3><p>Ordinary humans transform into identical coffins when Blood Hour begins. Each coffin carries an identity plate with the person's full name, age, date of birth, biological sex and nationality.</p></article>
+        <article><h3>Awakened</h3><p>Awakened individuals remain active during Blood Hour. They can use abilities, enter the Seven Towers, fight monsters, obtain materials and participate in the Blood Hour economy.</p></article>
+        <article><h3>Permanent Death</h3><p>An Awakened who dies during Blood Hour remains dead. Destroying an ordinary person's coffin also causes permanent death. Resurrection is impossible through the established system.</p></article>
+        <article><h3>Ability Progression</h3><p>Stages 1–4 use an Experience [Current/100] tracker. Reaching 100/100 automatically activates the next stage and resets EXP to 0/100.</p></article>
+        <article><h3>True Awakening</h3><p>Requires the Apex stage, 300 Ability Uses and one Orb of Awakening. The Orb must be manually activated and is consumed immediately.</p></article>
+        <article><h3>Personal Weapons</h3><p>Established personal weapons materialise during Blood Hour and dematerialise when it ends. They cannot be carried into ordinary time.</p></article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-brand">BLOOD HOUR</div>
-    <p>SHAH ALAM, SELANGOR, MALAYSIA · 2026</p>
-    <p class="footer-small">An unofficial public reference archive.</p>
-  </footer>
+  <footer class="site-footer"><div class="footer-brand">BLOOD HOUR</div><p>SHAH ALAM, SELANGOR, MALAYSIA · 2026</p><p class="footer-small">An unofficial public reference archive.</p></footer>
 
   <div class="reading-modal" id="readingModal" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
-    <section class="reading-panel" role="dialog" aria-modal="true"
-      aria-labelledby="modalTitle">
-      <button class="modal-close" type="button"
-        aria-label="Close window" data-close-modal>×</button>
+    <section class="reading-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="Close window" data-close-modal>×</button>
       <div class="modal-content" id="modalContent"></div>
     </section>
   </div>
