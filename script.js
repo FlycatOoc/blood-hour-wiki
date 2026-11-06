@@ -1,8 +1,5 @@
 
 const characters = [
-  // ==========================================
-  // UITM STUDENT GROUP
-  // ==========================================
   {
     name: "Keisha Ellyana",
     group: "UiTM Student Group",
@@ -75,10 +72,6 @@ const characters = [
     traits: ["Athletic", "Competitive", "Straightforward", "Protective"],
     details: "She dislikes unnecessary drama and prefers direct communication. Although she can be short-tempered, she usually cools down quickly."
   },
-
-  // ==========================================
-  // TRUTH SEEKER
-  // ==========================================
   {
     name: "Arifin Badar",
     group: "Truth Seeker",
@@ -151,10 +144,6 @@ const characters = [
     traits: ["Observant", "Thoughtful", "Cautious", "Empathetic"],
     details: "She prefers to understand a situation before acting. Despite occasional self-doubt, she can demonstrate considerable courage when others are in danger."
   },
-
-  // ==========================================
-  // BLOOD CULT
-  // ==========================================
   {
     name: "Dato' Samad Said",
     group: "Blood Cult",
@@ -203,10 +192,6 @@ const characters = [
     traits: ["Intelligent", "Logical", "Methodical", "Observant"],
     details: "She approaches unfamiliar biological phenomena with scientific curiosity. She prefers careful examination and reliable observations over assumptions."
   },
-
-  // ==========================================
-  // BLOOD HOUR NPCs
-  // ==========================================
   {
     name: "Liora Venn",
     group: "Blood Hour NPCs",
@@ -233,14 +218,6 @@ const characters = [
   }
 ];
 
-// ==========================================
-// CHARACTER ARCHIVE
-// ==========================================
-
-const grid = document.getElementById("characterGrid");
-const searchInput = document.getElementById("characterSearch");
-const countDisplay = document.getElementById("characterCount");
-
 const groups = [
   "All",
   "UiTM Student Group",
@@ -250,6 +227,9 @@ const groups = [
 ];
 
 let activeGroup = "All";
+
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
 function escapeHTML(value) {
   return String(value ?? "").replace(/[&<>"']/g, char => ({
@@ -261,15 +241,68 @@ function escapeHTML(value) {
   })[char]);
 }
 
+// ==========================================
+// UNIVERSAL READING PANEL
+// ==========================================
+
+function createReadingPanel() {
+  if ($("#readingModal")) return;
+
+  document.body.insertAdjacentHTML("beforeend", `
+    <div class="reading-modal" id="readingModal" aria-hidden="true">
+      <div class="reading-backdrop" data-close-modal></div>
+      <section class="reading-panel" role="dialog" aria-modal="true" aria-labelledby="readingTitle">
+        <button class="reading-close" type="button" aria-label="Close" data-close-modal>×</button>
+        <div class="reading-content" id="readingContent"></div>
+      </section>
+    </div>
+  `);
+
+  const modal = $("#readingModal");
+
+  $$("[data-close-modal]", modal).forEach(button => {
+    button.addEventListener("click", closeReadingPanel);
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeReadingPanel();
+  });
+}
+
+function openReadingPanel(content) {
+  const modal = $("#readingModal");
+  const panelContent = $("#readingContent");
+
+  if (!modal || !panelContent) return;
+
+  panelContent.innerHTML = content;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+
+  $(".reading-close", modal)?.focus();
+}
+
+function closeReadingPanel() {
+  const modal = $("#readingModal");
+  if (!modal) return;
+
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+// ==========================================
+// CHARACTER DATABASE
+// ==========================================
+
 function createFilterButtons() {
-  if (!grid) return;
+  const tools = $(".character-tools");
+  if (!tools || $("#characterFilters")) return;
 
-  const tools = document.querySelector(".character-tools");
-  if (!tools || document.getElementById("characterFilters")) return;
-
-  const filterContainer = document.createElement("div");
-  filterContainer.id = "characterFilters";
-  filterContainer.className = "character-filters";
+  const container = document.createElement("div");
+  container.id = "characterFilters";
+  container.className = "character-filters";
 
   groups.forEach(group => {
     const button = document.createElement("button");
@@ -281,26 +314,88 @@ function createFilterButtons() {
     button.addEventListener("click", () => {
       activeGroup = group;
 
-      filterContainer.querySelectorAll("button").forEach(item => {
-        item.classList.toggle(
-          "active",
-          item.dataset.group === activeGroup
-        );
+      $$("#characterFilters button").forEach(item => {
+        item.classList.toggle("active", item.dataset.group === group);
       });
 
       renderCharacters();
     });
 
-    filterContainer.appendChild(button);
+    container.appendChild(button);
   });
 
-  tools.insertAdjacentElement("afterend", filterContainer);
+  tools.insertAdjacentElement("afterend", container);
+}
+
+function characterCard(character) {
+  const ageText = character.age === null
+    ? "Age not publicly established"
+    : `${character.age} years old`;
+
+  const traits = character.traits.map(trait =>
+    `<span class="character-tag">${escapeHTML(trait)}</span>`
+  ).join("");
+
+  return `
+    <article class="character-card">
+      <button class="character-open" type="button" data-character="${escapeHTML(character.name)}">
+        <span class="character-group">${escapeHTML(character.group)}</span>
+        <span class="character-role">${escapeHTML(character.role)}</span>
+        <span class="character-name">${escapeHTML(character.name)}</span>
+        ${character.epithet
+          ? `<span class="character-epithet">${escapeHTML(character.epithet)}</span>`
+          : ""}
+        <span class="character-age">${escapeHTML(ageText)}</span>
+        <span class="character-ability">${escapeHTML(character.ability)}</span>
+        <span class="character-read">READ PROFILE <span>↗</span></span>
+      </button>
+    </article>
+  `;
+}
+
+function characterProfile(character) {
+  const ageText = character.age === null
+    ? "Not publicly established"
+    : `${character.age} years old`;
+
+  const traits = character.traits.map(trait =>
+    `<span class="character-tag">${escapeHTML(trait)}</span>`
+  ).join("");
+
+  return `
+    <p class="modal-eyebrow">${escapeHTML(character.group)}</p>
+    <h2 id="readingTitle">${escapeHTML(character.name)}</h2>
+    ${character.epithet
+      ? `<p class="modal-epithet">${escapeHTML(character.epithet)}</p>`
+      : ""}
+    <div class="profile-divider"></div>
+
+    <div class="profile-facts">
+      <div><small>ROLE</small><span>${escapeHTML(character.role)}</span></div>
+      <div><small>AGE</small><span>${escapeHTML(ageText)}</span></div>
+      <div><small>ABILITY</small><span>${escapeHTML(character.ability)}</span></div>
+      <div><small>WEAPON</small><span>${escapeHTML(character.weapon)}</span></div>
+    </div>
+
+    <h3>PERSONALITY & OVERVIEW</h3>
+    <p class="modal-description">${escapeHTML(character.description)}</p>
+
+    <h3>PERSONALITY TRAITS</h3>
+    <div class="character-tags modal-tags">${traits}</div>
+
+    <h3>ADDITIONAL INFORMATION</h3>
+    <p class="modal-description">${escapeHTML(character.details)}</p>
+  `;
 }
 
 function renderCharacters() {
+  const grid = $("#characterGrid");
+  const search = $("#characterSearch");
+  const count = $("#characterCount");
+
   if (!grid) return;
 
-  const query = (searchInput?.value || "").trim().toLowerCase();
+  const query = (search?.value || "").trim().toLowerCase();
 
   const filtered = characters.filter(character => {
     const searchable = [
@@ -312,74 +407,90 @@ function renderCharacters() {
       character.epithet,
       character.description,
       character.details,
-      ...(character.traits || [])
+      ...character.traits
     ].join(" ").toLowerCase();
 
-    const matchesSearch = searchable.includes(query);
-    const matchesGroup =
-      activeGroup === "All" || character.group === activeGroup;
-
-    return matchesSearch && matchesGroup;
+    return searchable.includes(query) &&
+      (activeGroup === "All" || character.group === activeGroup);
   });
 
-  grid.innerHTML = filtered.map((character, index) => {
-    const epithet = character.epithet
-      ? `<p class="character-epithet">${escapeHTML(character.epithet)}</p>`
-      : "";
+  grid.innerHTML = filtered.map(characterCard).join("");
 
-    const age = character.age !== null
-      ? `<span>${character.age} years old</span>`
-      : "";
-
-    const traits = character.traits
-      .map(trait => `<span class="character-tag">${escapeHTML(trait)}</span>`)
-      .join("");
-
-    return `
-      <article class="character-card">
-        <div class="character-meta">
-          <small>${escapeHTML(character.group)} · ${escapeHTML(character.role)}</small>
-
-          <h3>${escapeHTML(character.name)}</h3>
-
-          ${epithet}
-
-          <div class="character-information">
-            ${age}
-            <span>Ability: ${escapeHTML(character.ability)}</span>
-            <span>Weapon: ${escapeHTML(character.weapon)}</span>
-          </div>
-
-          <p class="character-description">
-            ${escapeHTML(character.description)}
-          </p>
-
-          <div class="character-tags">
-            ${traits}
-          </div>
-
-          <details class="character-details">
-            <summary>READ FULL PROFILE</summary>
-            <p>${escapeHTML(character.details)}</p>
-          </details>
-        </div>
-      </article>
-    `;
-  }).join("");
-
-  if (countDisplay) {
-    countDisplay.textContent =
-      `${filtered.length} ${filtered.length === 1 ? "PROFILE" : "PROFILES"}`;
+  if (count) {
+    count.textContent = `${filtered.length} PROFILES`;
   }
 
-  if (filtered.length === 0) {
+  if (!filtered.length) {
     grid.innerHTML = `
-      <div class="no-character-results">
+      <div class="empty-state">
         <h3>No matching profiles found.</h3>
         <p>Try another name, ability or faction.</p>
       </div>
     `;
   }
+
+  $$(".character-open", grid).forEach(button => {
+    button.addEventListener("click", () => {
+      const character = characters.find(item => item.name === button.dataset.character);
+      if (character) openReadingPanel(characterProfile(character));
+    });
+  });
+}
+
+// ==========================================
+// CLICK-TO-READ FOR INFORMATION CARDS
+// ==========================================
+
+function makeCardsClickable() {
+  const cardSelectors = [
+    ".info-card",
+    ".stage-card",
+    ".tower-card",
+    ".faction-card",
+    ".reference-card"
+  ];
+
+  cardSelectors.forEach(selector => {
+    $$(selector).forEach(card => {
+      if (card.dataset.readable === "true") return;
+
+      card.dataset.readable = "true";
+      card.classList.add("readable-card");
+
+      const title = $("h3", card)?.textContent?.trim() || "Information";
+      const content = $$("p", card)
+        .map(p => `<p class="modal-description">${escapeHTML(p.textContent.trim())}</p>`)
+        .join("");
+
+      const number = $(".card-number, .stage-number, .tower-index", card)?.textContent || "";
+
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `Read ${title}`);
+
+      const openCard = () => {
+        openReadingPanel(`
+          <p class="modal-eyebrow">BLOOD HOUR FIELD ARCHIVE</p>
+          <h2 id="readingTitle">${escapeHTML(title)}</h2>
+          ${number ? `<p class="modal-epithet">${escapeHTML(number)}</p>` : ""}
+          <div class="profile-divider"></div>
+          ${content}
+        `);
+      };
+
+      card.addEventListener("click", event => {
+        if (event.target.closest("a, button")) return;
+        openCard();
+      });
+
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openCard();
+        }
+      });
+    });
+  });
 }
 
 // ==========================================
@@ -387,20 +498,20 @@ function renderCharacters() {
 // ==========================================
 
 function initialiseNavigation() {
-  const menuToggle = document.getElementById("menuToggle");
-  const mainNav = document.getElementById("mainNav");
+  const toggle = $("#menuToggle");
+  const nav = $("#mainNav");
 
-  if (!menuToggle || !mainNav) return;
+  if (!toggle || !nav) return;
 
-  menuToggle.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(open));
   });
 
-  mainNav.querySelectorAll("a").forEach(link => {
+  $$("a", nav).forEach(link => {
     link.addEventListener("click", () => {
-      mainNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
     });
   });
 }
@@ -410,18 +521,11 @@ function initialiseNavigation() {
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Remove the old artwork gallery completely.
-  const oldGallery = document.getElementById("galleryModal");
-  if (oldGallery) oldGallery.remove();
-
-  // Remove any old static character cards.
-  if (grid) grid.innerHTML = "";
-
+  createReadingPanel();
   createFilterButtons();
   renderCharacters();
+  makeCardsClickable();
   initialiseNavigation();
 
-  if (searchInput) {
-    searchInput.addEventListener("input", renderCharacters);
-  }
+  $("#characterSearch")?.addEventListener("input", renderCharacters);
 });
