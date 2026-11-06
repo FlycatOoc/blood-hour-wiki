@@ -529,3 +529,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $("#characterSearch")?.addEventListener("input", renderCharacters);
 });
+
