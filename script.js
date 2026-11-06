@@ -1,56 +1,60 @@
-// ============================================
-// BLOOD HOUR — PUBLIC FIELD ARCHIVE
-// Public information only. Tower spoilers excluded.
-// ============================================
+"use strict";
+
+/* =========================================
+   BLOOD HOUR — PUBLIC FIELD ARCHIVE
+   Canon source: Blood Hour Master Lore v1.1
+   ========================================= */
 
 const rules = [
   {
     number: "01",
     title: "Daily Activation",
-    text: "Blood Hour begins every day at exactly 19:00:00. The phenomenon is a recurring event rather than a random occurrence. Its activation marks the beginning of twelve additional hours experienced by Awakened individuals and associated entities.",
-    extra: "Blood Hour first appeared in 2016. By 2026, the phenomenon has existed for approximately ten years."
+    text: "Blood Hour begins every day at exactly 19:00:00. Ordinary time stops and the sky turns blood red."
   },
   {
     number: "02",
-    title: "Time Suspension",
-    text: "When Blood Hour begins, ordinary time comes to a complete standstill. Participants experience twelve hours while the ordinary world experiences only one second. Normal time resumes at exactly 19:00:01.",
-    extra: "This difference allows Awakened individuals to carry out activities during the additional period without the ordinary world progressing at the same rate."
+    title: "Twelve Additional Hours",
+    text: "Blood Hour lasts twelve hours from the perspective of those who experience it. Ordinary time resumes at exactly 19:00:01."
   },
   {
     number: "03",
-    title: "The Crimson Sky",
-    text: "The sky turns blood red whenever Blood Hour begins. This change marks the transition from ordinary time into the supernatural period. It is one of the most recognisable signs of the phenomenon.",
-    extra: "The crimson sky is part of the established activation conditions and is not an ordinary weather event."
+    title: "The Coffin Transformation",
+    text: "Every ordinary human transforms into an identical coffin when Blood Hour begins. Each coffin carries an identifying plate."
   },
   {
     number: "04",
-    title: "Frozen Environment",
-    text: "Ordinary environmental activity stops during Blood Hour. Vehicles remain frozen, water and other liquids stop moving, fire does not continue spreading, and weather conditions remain suspended.",
-    extra: "Awakened individuals and Blood Hour entities can still move and interact with their surroundings. The ordinary environment does not continue operating normally."
+    title: "The Frozen Environment",
+    text: "Animals, vehicles, water, fire, weather and ordinary environmental activities remain frozen during Blood Hour."
   },
   {
     number: "05",
-    title: "The Coffin System",
-    text: "Every ordinary human transforms into an identical coffin when Blood Hour begins. Each coffin carries an identity plate containing the person's full name, age, date of birth, biological sex and nationality.",
-    extra: "The external appearance of the coffins is identical regardless of the identity recorded on the plate. Ordinary means cannot open them."
+    title: "Who Remains Active",
+    text: "Only Awakened individuals and Blood Hour entities can move and act normally during the phenomenon."
   },
   {
     number: "06",
     title: "Permanent Death",
-    text: "Destroying an ordinary person's coffin during Blood Hour causes that person's permanent death. When normal time resumes, the person's body is discovered dead. The official classification of such deaths is cardiac arrest.",
-    extra: "An Awakened individual who dies during Blood Hour also dies permanently. Their body becomes a coffin during the phenomenon, and their human corpse appears when ordinary time resumes. Resurrection is not possible through the established system."
+    text: "An Awakened who dies during Blood Hour remains dead. Resurrection is impossible through the established system."
   },
   {
     number: "07",
-    title: "The Awakened",
-    text: "Awakened individuals possess supernatural potential that allows them to remain active while ordinary time is suspended. They can move, interact, use abilities and enter the Seven Towers.",
-    extra: "Not every Awakened is a dedicated fighter. Abilities may provide offence, defence, mobility, healing, awareness, support or other useful forms of survival."
+    title: "Coffin Destruction",
+    text: "Destroying an ordinary person's coffin causes permanent death. The person's body is discovered dead when normal time resumes."
   },
   {
     number: "08",
-    title: "Independent Activity",
-    text: "Blood Hour does not force every participant into combat or tower exploration. Awakened individuals can use the additional time according to their own circumstances and ambitions.",
-    extra: "They may investigate, train, work, study, trade, socialise, rest or pursue personal objectives. Ordinary responsibilities and personal relationships remain meaningful."
+    title: "Ability Development",
+    text: "Awakened abilities progress through five stages. Abilities do not have F–EX ranks; monster ranks are a separate system."
+  },
+  {
+    number: "09",
+    title: "Personal Weapons",
+    text: "Established personal weapons materialise during Blood Hour and dematerialise when it ends. They cannot be carried into ordinary time."
+  },
+  {
+    number: "10",
+    title: "Independent Lives",
+    text: "Awakened individuals are not automatically fighters. They may study, work, trade, investigate, socialise or rest during their additional hours."
   }
 ];
 
@@ -58,37 +62,32 @@ const stages = [
   {
     number: "I",
     name: "Awakening",
-    description: "The initial manifestation of an individual's supernatural ability. This is the first recognised stage in an Awakened person's development.",
-    progression: "Experience: 0–100",
-    detail: "An ability becomes available to its owner and begins to establish its basic functions. The individual can learn how the ability behaves, identify its practical uses and develop familiarity through genuine activation and experience."
+    description: "The first recognised stage of an Awakened individual's ability.",
+    progression: "Experience: 0–100"
   },
   {
     number: "II",
     name: "Emergence",
-    description: "The ability develops beyond its initial manifestation, allowing its existing characteristics to become more established.",
-    progression: "Experience: 0–100",
-    detail: "Existing functions may become more reliable or effective. The ability may gain improved control, efficiency or additional techniques that remain consistent with its original nature."
+    description: "The ability develops beyond its initial stage and gains further potential.",
+    progression: "Experience: 0–100"
   },
   {
     number: "III",
     name: "Ascension",
-    description: "A higher stage of ability development in which the individual's established power gains greater capability.",
-    progression: "Experience: 0–100",
-    detail: "The ability can develop more advanced applications. Depending on its nature, improvements may involve range, precision, control, defensive utility, output or the ability to handle more complex situations."
+    description: "A further stage of ability development, allowing more advanced evolution.",
+    progression: "Experience: 0–100"
   },
   {
     number: "IV",
     name: "Apex",
-    description: "An advanced stage preceding the final recognised stage of ability progression.",
-    progression: "Experience: 0–100",
-    detail: "The ability approaches its highest ordinary developmental stage. Existing functions may become significantly more sophisticated, and the owner may develop advanced techniques consistent with the original ability."
+    description: "The final experience-based stage before the special True Awakening requirement.",
+    progression: "Experience: 0–100"
   },
   {
     number: "V",
     name: "True Awakening",
-    description: "The final recognised ability stage. Unlike the previous stages, it requires a specific item and a manual activation process.",
-    progression: "Apex + 300 Ability Uses + Orb of Awakening",
-    detail: "True Awakening requires the Awakened individual to have reached Apex, accumulated 300 genuine ability uses and obtained one Orb of Awakening. The owner must manually activate the Orb, which is consumed immediately. This stage never activates automatically."
+    description: "The final stage. It requires Apex, 300 Ability Uses and one Orb of Awakening.",
+    progression: "Manual Orb activation"
   }
 ];
 
@@ -97,380 +96,503 @@ const towers = [
     number: "01",
     name: "Tower of Ruins",
     location: "UiTM Shah Alam",
-    theme: "Ancient Civilisation · Ruins · Decay · Undead Warriors",
-    overview: "The Tower of Ruins stands within the UiTM Shah Alam area. Its identity is built around the remains of an ancient civilisation, combining weathered architecture, forgotten structures and an atmosphere of decay.",
-    atmosphere: "Its public visual identity centres on collapsed stonework, old architectural forms, damaged structures and the imagery of an abandoned civilisation. The tower's theme is strongly associated with ancient ruins and undead warriors.",
-    note: "This archive entry describes only the tower's public identity and general theme."
+    theme: "Ancient Civilisation · Ruins · Decay",
+    overview: "The Tower of Ruins is associated with UiTM Shah Alam. Its public identity draws on the remains of an ancient civilisation, forgotten structures and the atmosphere of a place left behind.",
+    atmosphere: "Its general visual identity centres on weathered architecture, old stone structures and the imagery of an abandoned civilisation."
   },
   {
     number: "02",
     name: "Tower of Glass",
     location: "i-City, Section 7, Shah Alam",
     theme: "Glass · Reflections · Crystals · Illusions",
-    overview: "The Tower of Glass is located in the i-City area of Section 7. Its identity revolves around reflective surfaces, crystal structures and the uncertain boundary between what is real and what is perceived.",
-    atmosphere: "Glass architecture, crystal-like formations, reflections and visual distortions define its public theme. Its identity suggests an environment where appearances and perception are important elements."
+    overview: "The Tower of Glass is located in the i-City area of Section 7. Its identity revolves around reflective surfaces, crystal structures and the uncertain boundary between appearance and reality.",
+    atmosphere: "Glass architecture, crystal-like formations, reflections and visual distortions define its public theme."
   },
   {
     number: "03",
     name: "Tower of Verdant",
     location: "Taman Botani Negara Shah Alam",
     theme: "Nature · Mutated Plants · Roots · Parasites",
-    overview: "The Tower of Verdant is associated with Taman Botani Negara Shah Alam. Its theme transforms familiar natural imagery into something unfamiliar, with emphasis on plant life, aggressive vegetation and biological growth.",
-    atmosphere: "Its visual identity centres on dense greenery, tangled roots, mutated plants and parasitic growth. Nature is presented as an active and potentially hostile environment rather than a peaceful landscape."
+    overview: "The Tower of Verdant is associated with Taman Botani Negara Shah Alam. Its theme transforms familiar natural imagery into something unfamiliar, with emphasis on plant life and biological growth.",
+    atmosphere: "Its public identity centres on dense greenery, tangled roots and aggressive vegetation."
   },
   {
     number: "04",
     name: "Tower of Depths",
     location: "Taman Tasik Shah Alam, Section 14",
-    theme: "Deep Sea · Aquatic Creatures · Underwater Ruins · Abyss",
+    theme: "Deep Sea · Aquatic Environment · Underwater Ruins",
     overview: "The Tower of Depths is located near Taman Tasik Shah Alam in Section 14. Its identity draws from deep-sea environments, submerged structures and the unfamiliar world beneath the water.",
-    atmosphere: "Its public theme combines aquatic life, underwater architecture, deep-water imagery and the feeling of descending into an environment beyond ordinary human experience."
+    atmosphere: "Its public theme combines aquatic imagery, underwater architecture and the feeling of descending into an unfamiliar environment."
   },
   {
     number: "05",
     name: "Tower of Judgement",
     location: "Dataran Shah Alam",
-    theme: "Gothic Architecture · Infernal Themes",
-    overview: "The Tower of Judgement stands at Dataran Shah Alam. Its identity is defined by gothic architectural imagery and infernal symbolism, giving it a darker and more imposing character than an ordinary structure.",
-    atmosphere: "Its public theme evokes monumental gothic design, severe architecture and imagery associated with judgement and punishment. Its appearance is intended to feel imposing and unsettling."
+    theme: "Gothic Architecture · Infernal Imagery",
+    overview: "The Tower of Judgement stands at Dataran Shah Alam. Its identity is defined by gothic architectural imagery and infernal symbolism.",
+    atmosphere: "Its public theme evokes monumental gothic design, severe architecture and imagery associated with judgement."
   },
   {
     number: "06",
     name: "Tower of Iron",
     location: "Kompleks Sukan Shah Alam",
     theme: "Ancient Fortress · Mechanical Industry · War Machines",
-    overview: "The Tower of Iron is associated with Kompleks Sukan Shah Alam. Its public identity combines the defensive appearance of an ancient fortress with the visual language of mechanical industry and military machinery.",
-    atmosphere: "Its theme centres on heavy structures, industrial mechanisms, reinforced architecture and the imagery of ancient war machines. The overall identity is mechanical, fortified and imposing."
+    overview: "The Tower of Iron is associated with Kompleks Sukan Shah Alam. Its identity combines the defensive appearance of an ancient fortress with mechanical industry and military machinery.",
+    atmosphere: "Its theme centres on heavy structures, industrial mechanisms, reinforced architecture and ancient war-machine imagery."
   },
   {
     number: "07",
     name: "Tower of Silence",
     location: "Setia City, Setia Alam",
     theme: "Forgotten World · Endless Void · Distorted Reality",
-    overview: "The Tower of Silence is located in Setia City, Setia Alam. Its public identity is built around absence, forgotten places, endless emptiness and environments that appear disconnected from ordinary reality.",
-    atmosphere: "Its theme evokes silent landscapes, distorted surroundings, forgotten architecture and the imagery of an endless void. The tower is associated with an atmosphere of isolation and uncertainty."
+    overview: "The Tower of Silence is located in Setia City, Setia Alam. Its identity is built around forgotten places, emptiness and environments disconnected from ordinary reality.",
+    atmosphere: "Its public theme evokes silent landscapes, distorted surroundings, forgotten architecture and the imagery of an endless void."
   }
 ];
+
+/* =========================================
+   CHARACTER ARCHIVE
+   Only established v1.1 information is used.
+   ========================================= */
 
 const characters = [
   {
     name: "Keisha Ellyana",
+    fullName: "Keisha Ellyana binti Azlan",
     group: "UiTM Student Group",
-    role: "Mass Communication Student · Social Media Influencer",
+    role: "First-Year Mass Communication Student · Social Media Influencer",
     age: "21",
+    dateOfBirth: "14 February 2005",
+    height: "164 cm",
+    weight: "52 kg",
     epithet: "The Charming Deceiver",
-    appearance: "Female, 164 cm, slim build, long wavy dark-brown hair, warm brown eyes and light tan skin. Her usual style is fashionable and casual.",
-    personality: "Extroverted, charismatic, confident, attention-loving, slightly vain and observant.",
+    appearance: "Long wavy dark-brown hair, warm brown eyes, light tan complexion and a slim feminine build. Her established style includes black-and-gold streetwear, a white crop top, a black-and-white varsity jacket with gold details, black cargo trousers, sunglasses, hairpins, geometric dangling earrings, a necklace, wristwatch and rings.",
+    personality: "Extroverted, charismatic, attention-loving, confident, image-conscious, playful, observant, ambitious, slightly vain and adaptable. She hides insecurity behind humour and confidence.",
+    background: "A UiTM Shah Alam Mass Communication student from a comfortable middle-class family. She works as a social media influencer, creating content about fashion, university lifestyle, cafés and food, beauty, entertainment and daily activities. Her main platforms are TikTok and Instagram.",
+    family: "Father: Azlan Firdaus, 49, corporate sales manager. Mother: Nadia Farhana, 47, senior administrative executive. Younger brother: Adam Hakimi, 17, secondary school student.",
+    education: "Bachelor of Mass Communication, First Year, UiTM Shah Alam.",
+    speech: "Expressive, confident and casual. Uses teasing, playful sarcasm and humour. In-game dialogue is in English.",
     ability: "Echo Projection",
-    abilityDetail: "Creates convincing auditory and visual projections. She can produce decoys, reproduce sounds and voices she has previously heard, and create several misleading positions to confuse attackers. At higher stages, her projections may become increasingly convincing and briefly interact with physical surroundings.",
-    survival: "Her decoys can redirect enemy attention, conceal her actual position and create emergency sensory distractions that help her escape.",
-    limitations: "Complex projections require concentration. Strong enemies may identify inconsistencies, and projections cannot independently inflict substantial physical damage.",
+    abilityDetail: "Creates auditory and visual projections, including convincing decoys and reproduced sounds or voices she has previously heard. She can create several misleading positions to confuse attackers and conceal her actual location. At higher progression stages, projections may become increasingly convincing and briefly interact with physical surroundings.",
+    survival: "Decoys redirect enemy attention, conceal her position and create opportunities for emergency escape.",
+    limitations: "Complex projections require concentration. Strong enemies may identify inconsistencies. Projections cannot independently inflict substantial physical damage.",
     weapon: "Resonance Twin Daggers",
-    weaponDetail: "A pair of lightweight daggers with vibration-conducting edges, suitable for quick attacks, close combat and rapid repositioning.",
-    background: "A Mass Communication student who creates lifestyle, fashion, beauty and university-related content on social media. She enjoys attention and knows how to command a room, although confidence does not always reveal what she is genuinely feeling.",
-    traits: ["Charismatic", "Confident", "Playful", "Observant"]
+    weaponDetail: "A pair of lightweight daggers with vibration-conducting edges, suitable for quick attacks and close combat.",
+    core: "She enjoys being seen, but does not always want people to see who she really is.",
+    traits: ["Charismatic", "Confident", "Playful", "Observant", "Ambitious"]
   },
   {
     name: "Isyirah Amara",
+    fullName: "Isyirah Amara binti Zulkifli",
     group: "UiTM Student Group",
-    role: "Law Student",
+    role: "Second-Year Law Student",
     age: "22",
+    dateOfBirth: "8 August 2004",
+    height: "160 cm",
+    weight: "49 kg",
     epithet: "The Lucky Troublemaker",
-    appearance: "Female, 160 cm, petite build, shoulder-length black hair with bangs and dark-brown eyes. Her usual clothing includes oversized shirts, jeans and sneakers.",
-    personality: "Playful, cheerful, outgoing, mischievous, spontaneous and outspoken. She is the twin sister of Khairun Amara.",
+    appearance: "Short black bob with straight bangs, dark-brown eyes, youthful cheerful and expressive face, light-to-medium complexion and petite slim build. Usually wears an oversized white graphic T-shirt, loose light-blue jeans, headphones, shoulder bag and sneakers.",
+    personality: "Cheerful, playful, outgoing, mischievous, spontaneous, outspoken, curious, competitive, impulsive and affectionate. More expressive and impulsive than her twin sister.",
+    background: "A UiTM Shah Alam Law student from a stable middle-class family. She is the twin sister of Khairun Amara.",
+    family: "Father: Zulkifli Rahman, 51, senior civil servant. Mother: Noraini Hamid, 48, primary school teacher. Twin sister: Khairun Amara.",
+    education: "Bachelor of Laws, Second Year, UiTM Shah Alam.",
+    speech: "Casual, energetic and expressive, with teasing and exaggeration. In-game dialogue is in English.",
     ability: "Lucky Shift",
-    abilityDetail: "Slightly alters the probability of minor events in her immediate surroundings. It can turn an uncertain movement into a fortunate escape, cause an enemy's attack to narrowly miss under suitable circumstances or improve the likelihood of a favourable outcome during a short sequence of actions.",
-    survival: "Her ability can help her avoid dangerous situations and create small opportunities to escape or counterattack.",
-    limitations: "She cannot freely control major events or guarantee victory. Strong probability alterations become increasingly difficult.",
+    abilityDetail: "Subtly alters probability in her immediate surroundings. It may turn an uncertain movement into a fortunate escape, cause an enemy's attack to narrowly miss under suitable circumstances or improve the likelihood of a favourable outcome during a short sequence of actions.",
+    survival: "Helps her avoid dangerous situations and creates small opportunities to escape or counterattack.",
+    limitations: "It cannot guarantee victory, freely control major events or make impossible outcomes happen. It does not grant absolute control over reality.",
     weapon: "Twin Crescent Blades",
     weaponDetail: "Two short curved blades designed for agile close combat.",
-    background: "A law student who enjoys humour, playful teasing and spontaneous adventures. Her natural confidence and competitive nature can sometimes lead her to act before considering the consequences.",
-    traits: ["Cheerful", "Impulsive", "Mischievous", "Outgoing"]
+    core: "She relies on luck because she dislikes overthinking, but the people she loves deserve more than lucky decisions.",
+    traits: ["Cheerful", "Playful", "Mischievous", "Spontaneous", "Competitive"]
   },
   {
     name: "Khairun Amara",
+    fullName: "Khairun Amara binti Zulkifli",
     group: "UiTM Student Group",
-    role: "Law Student",
+    role: "Second-Year Law Student",
     age: "22",
+    dateOfBirth: "8 August 2004",
+    height: "160 cm",
+    weight: "50 kg",
     epithet: "The Tactical Tease",
-    appearance: "Female, 160 cm, petite build, long straight black hair and dark-brown eyes. Her usual clothing includes blouses, fitted jeans and simple accessories.",
-    personality: "Playful, sarcastic, witty, argumentative and calm under pressure. She is the twin sister of Isyirah Amara.",
+    appearance: "Long straight black hair, dark-brown eyes, mature composed features, light-to-medium complexion and petite slim build. Usually wears a burgundy button-up shirt, fitted black jeans, hoop earrings, necklace and wristwatch.",
+    personality: "Witty, sarcastic, playful, observant, composed, intelligent, argumentative, independent, practical and protective. More composed and analytical than Isyirah.",
+    background: "A UiTM Shah Alam Law student from a stable middle-class family. She is the twin sister of Isyirah Amara.",
+    family: "Father: Zulkifli Rahman, 51, senior civil servant. Mother: Noraini Hamid, 48, primary school teacher. Twin sister: Isyirah Amara.",
+    education: "Bachelor of Laws, Second Year, UiTM Shah Alam.",
+    speech: "Calm, witty and dry, often using sarcasm. In-game dialogue is in English.",
     ability: "Vector Thread",
     abilityDetail: "Creates invisible directional force threads. She can redirect moving objects, restrain enemies by manipulating their movement, change the trajectory of incoming attacks and pull herself towards nearby structures.",
-    survival: "Her threads can redirect certain projectiles, disrupt enemy movement and provide controlled evasive movement.",
-    limitations: "Accurate directional control is required. Very heavy targets are difficult to manipulate, and multiple simultaneous threads increase concentration requirements.",
+    survival: "Redirects certain projectiles, disrupts enemy movement and enables controlled evasive movement.",
+    limitations: "Requires accurate directional control. Very heavy targets are difficult to manipulate. Multiple simultaneous threads increase concentration and coordination requirements. It is not unrestricted telekinesis.",
     weapon: "Threadbound Rapier",
-    weaponDetail: "A lightweight rapier with a specialised channel for her directional force threads.",
-    background: "A law student who is more analytical and controlled than her twin sister. She prefers having a plan and often uses sarcasm and wit in conversation, while remaining aware that not every situation can be controlled.",
-    traits: ["Intelligent", "Composed", "Witty", "Protective"]
+    weaponDetail: "A lightweight rapier with a specialised channel for her force threads.",
+    core: "She prefers control, but important things cannot always be controlled.",
+    traits: ["Witty", "Composed", "Analytical", "Independent", "Protective"]
   },
   {
     name: "Badrul Aktar",
+    fullName: "Badrul Aktar",
     group: "UiTM Student Group",
-    role: "Accountancy Student",
+    role: "Second-Year Accountancy Student",
     age: "23",
+    dateOfBirth: "19 November 2002",
+    height: "175 cm",
+    weight: "78 kg",
     epithet: "The Unyielding Guardian",
-    appearance: "Male, 175 cm, average athletic build, neat short black hair, dark-brown eyes and medium tan skin. He usually dresses neatly and wears a wristwatch.",
-    personality: "Stern, disciplined, responsible, practical, blunt and protective.",
+    appearance: "Short neat black hair, dark-brown eyes, medium tan complexion and an average athletic build with a solid frame. Usually wears practical, neat casual clothing and a wristwatch.",
+    personality: "Stern, disciplined, responsible, practical, blunt, patient, protective, reliable, observant, reserved and stubborn. Shows care through actions and practical support.",
+    background: "A UiTM Shah Alam Accountancy student from a working middle-class family.",
+    family: "Father: Mohd Aktar Hassan, 54, technical supervisor at an industrial manufacturing company. Mother: Salmah Ismail, 51, administrative assistant at a private company. Younger sister: Nur Aina Aktar, 19, diploma student.",
+    education: "Bachelor of Accountancy, Second Year, UiTM Shah Alam.",
+    speech: "Direct, firm, mature and concise, with occasional dry humour. In-game dialogue is in English.",
     ability: "Iron Guard",
-    abilityDetail: "Generates reinforced defensive armour around his body, creates temporary protective barriers, strengthens physical resistance and concentrates defence on specific body parts. He can also shield nearby allies with reduced defensive efficiency.",
-    survival: "His ability offers exceptional defensive potential, allowing him to withstand attacks that would seriously injure ordinary Awakened individuals and provide protection for teammates.",
-    limitations: "Heavy defensive reinforcement reduces mobility. Large barriers require greater ability control, and his defence is not absolute.",
+    abilityDetail: "Generates reinforced defensive protection around his body, creates temporary barriers, strengthens physical resistance and allows him to concentrate defence on a specific body part. He can shield nearby allies, though with reduced defensive efficiency.",
+    survival: "Provides strong defensive potential and allows him to protect nearby teammates.",
+    limitations: "Heavy reinforcement reduces mobility. Large barriers require greater control. Defence is not absolute and can be overwhelmed.",
     weapon: "Bastion Warhammer",
     weaponDetail: "A heavy warhammer designed for powerful defensive counters and close-range combat.",
-    background: "An accountancy student who tends to show concern through practical assistance rather than emotional words. He takes responsibility seriously, dislikes unnecessary complications and is dependable when others need help.",
-    traits: ["Disciplined", "Responsible", "Patient", "Protective"]
+    core: "He wants to protect everyone, but must learn to share responsibility.",
+    traits: ["Disciplined", "Responsible", "Patient", "Protective", "Reliable"]
   },
   {
     name: "Hani Marissa",
+    fullName: "Hani Marissa binti Rahman",
     group: "UiTM Student Group",
-    role: "Computer Science Student",
+    role: "First-Year Computer Science Student",
     age: "21",
+    dateOfBirth: "27 September 2005",
+    height: "157 cm",
+    weight: "47 kg",
     epithet: "The System Whisperer",
-    appearance: "Female, 157 cm, slim build, black hair usually tied in a ponytail, round glasses and dark-brown eyes. Her usual clothing includes hoodies, loose pants and sneakers.",
-    personality: "Intelligent, technically minded, introverted with strangers, passionate about programming and technology, and sometimes socially awkward.",
+    appearance: "Black hair in a high ponytail with bangs, dark-brown eyes, youthful gentle and reserved face, light-to-medium complexion and petite slim build. Wears round thin-framed glasses, an oversized black hoodie with a futuristic graphic, backpack and tech accessories.",
+    personality: "Intelligent, technically minded, introverted around unfamiliar people, curious, detail-oriented, patient, methodical and reserved. Can be socially awkward, but becomes enthusiastic and talkative when discussing technology.",
+    background: "A Computer Science student from a financially stable middle-class family.",
+    family: "Father: Rahman Iskandar, 52, electrical engineer. Mother: Siti Norhayati, 49, secondary school teacher. Older brother: Amir Hakim, 25, junior software developer.",
+    education: "Bachelor of Computer Science, First Year, UiTM Shah Alam.",
+    speech: "Soft and thoughtful, sometimes hesitant. More fluent and expressive when discussing technology. In-game dialogue is in English.",
     ability: "System Interface",
-    abilityDetail: "Analyses nearby mechanical and electronic systems, establishes temporary connections with compatible technology, detects structural weaknesses in machinery, creates simple autonomous interface drones and produces temporary digital maps of explored areas.",
-    survival: "Interface drones can provide limited defensive interception. Environmental sensors can detect approaching threats, while system analysis can help identify escape routes and dangerous structures.",
-    limitations: "She cannot automatically control every machine. Complex systems require more time to analyse, and biological monsters cannot simply be hacked.",
+    abilityDetail: "Analyses nearby mechanical and electronic systems, establishes temporary connections with compatible technology, detects structural weaknesses in machinery, interfaces with compatible devices and supports temporary digital mapping of explored areas.",
+    survival: "Can use compatible sensors or devices to monitor surroundings, identify structural weaknesses and find escape routes.",
+    limitations: "Cannot automatically control every machine. Complex systems require more time to analyse. Biological monsters cannot simply be hacked. Supernatural systems may not follow conventional technological rules.",
     weapon: "Arc-Tech Staff",
-    weaponDetail: "A compact technical staff capable of releasing controlled electrical and kinetic bursts.",
-    background: "A Computer Science student who enjoys understanding complicated systems. She may be reserved around unfamiliar people but becomes enthusiastic and expressive when discussing programming and technology.",
-    traits: ["Intelligent", "Curious", "Methodical", "Patient"]
+    weaponDetail: "A technical staff capable of releasing controlled electrical and kinetic bursts. It supports ranged combat and distance management.",
+    core: "She understands complicated systems, but struggles to understand her own social and emotional needs.",
+    traits: ["Intelligent", "Introverted", "Curious", "Methodical", "Technical"]
   },
   {
     name: "Putri Imelda",
+    fullName: "Putri Imelda",
     group: "UiTM Student Group",
-    role: "Sport Science Student",
+    role: "Second-Year Sport Science Student",
     age: "22",
+    dateOfBirth: "3 June 2004",
+    height: "169 cm",
+    weight: "61 kg",
     epithet: "The Kinetic Brawler",
-    appearance: "Female, 169 cm, athletic build, short sporty black hair, dark-brown eyes and medium tan skin. Her usual clothing is sporty casual wear, track pants and running shoes.",
-    personality: "Tomboyish, straightforward, outspoken, competitive, active and protective. She dislikes drama and usually cools down quickly after losing her temper.",
+    appearance: "Short sporty black hair, dark-brown eyes, medium tan skin and an athletic toned build. Her established appearance includes sporty black clothing, a purple-and-black jacket, sunglasses and fingerless gloves.",
+    personality: "Sporty, straightforward, outspoken, competitive, active, protective and dislikes drama. She can be short-tempered but cools down quickly.",
+    background: "A UiTM Shah Alam Sport Science student from a working middle-class family.",
+    family: "Father: Imran Hakimi, 52, logistics operations supervisor. Mother: Noraini Zaleha, 49, government hospital administrative officer. Younger brother: Imran Danish, 18, pre-university student.",
+    education: "Bachelor of Sport Science, Second Year, UiTM Shah Alam.",
     ability: "Kinetic Burst",
     abilityDetail: "Stores a portion of incoming kinetic force and releases it through strikes, kicks or movement. It enhances acceleration and physical impact, creates short-range kinetic shockwaves and allows controlled bursts to change direction rapidly.",
-    survival: "She can absorb and redirect some physical impacts, use powerful evasive movement and interrupt approaching enemies.",
-    limitations: "Storage capacity is finite. Excessive force can overwhelm her control, and non-kinetic attacks are not automatically absorbed.",
+    survival: "Can absorb and redirect some physical impacts, perform evasive movement and interrupt approaching enemies.",
+    limitations: "Storage capacity is finite. Excessive force can overwhelm her control. Non-kinetic attacks are not automatically absorbed. Poor timing can waste stored energy or affect balance.",
     weapon: "Impact Tonfas",
-    weaponDetail: "A pair of reinforced tonfas designed to channel stored kinetic energy.",
-    background: "A Sport Science student who prefers direct communication and physical activity. She is competitive and energetic, and tends to protect people she cares about.",
-    traits: ["Athletic", "Competitive", "Straightforward", "Protective"]
+    weaponDetail: "A pair of reinforced tonfas designed to channel kinetic energy.",
+    core: "She sees strength as pushing forward, but must learn when to stop.",
+    traits: ["Sporty", "Outspoken", "Competitive", "Protective", "Active"]
   },
   {
     name: "Arifin Badar",
+    fullName: "Arifin Badar",
     group: "Truth Seeker",
-    role: "Leader · UiTM Law Lecturer",
+    role: "Leader · TS01 · UiTM Law Lecturer",
     age: "46",
+    dateOfBirth: "12 January 1980",
+    height: "178 cm",
+    weight: "76 kg",
     epithet: "The Unyielding Strategist",
-    appearance: "Male, 178 cm, lean build with broad shoulders, short black hair with grey temples and sharp dark eyes. Usually wears formal clothing.",
-    personality: "Composed, analytical, strategic, emotionally restrained, demanding and difficult to panic.",
+    appearance: "Mature appearance, short black hair with grey strands at the temples, sharp dark eyes, medium complexion and a lean build with slightly broad shoulders. Dresses in understated professional and formal clothing.",
+    personality: "Extremely composed, analytical, strategic, disciplined, observant, authoritative, reserved, sceptical and responsible. Can be demanding and distrustful.",
+    background: "A UiTM Law lecturer with extensive legal education. He leads the Truth Seeker in its investigation of Blood Hour.",
+    family: "Father: Badaruddin Hassan, 73, retired government legal administrative officer. Mother: Zainab Abdullah, 70, former secondary school teacher. Wife: Faridah Mahmud, 43, secondary school counsellor. Daughter: Amani Arifin, 17, secondary school student.",
+    education: "LL.B., LL.M. and PhD in Law.",
+    speech: "Calm, measured, professional and precise. In-game dialogue is in English.",
     ability: "Tactical Sight",
-    abilityDetail: "Analyses combat patterns, identifies structural and defensive weaknesses, predicts likely enemy movements through observed behaviour, tracks several nearby combatants and improves tactical decision-making.",
-    survival: "Detects dangerous attack patterns, helps identify escape opportunities and reduces the likelihood of being surprised.",
-    limitations: "Predictions rely on available information. Unknown abilities can disrupt his assessment, and he cannot guarantee accurate predictions against unpredictable enemies.",
-    weapon: "Commander's Saber",
-    weaponDetail: "A balanced military-style saber designed for controlled attacks and defensive counters.",
-    background: "A UiTM law lecturer who leads the Truth Seeker. He values preparation, reliable information and responsible decisions. His leadership style is professional and demanding.",
-    traits: ["Analytical", "Strategic", "Disciplined", "Authoritative"]
+    abilityDetail: "Analyses combat patterns, identifies structural and defensive weaknesses, tracks nearby combatants and evaluates likely enemy movements using observed behaviour.",
+    survival: "Helps detect dangerous attack patterns, identify escape opportunities and reduce the likelihood of being surprised.",
+    limitations: "Predictions rely on available information. Unknown abilities and unpredictable behaviour can disrupt his assessment. It is not future sight or mind reading.",
+    weapon: "Tactical Baton",
+    weaponDetail: "A practical tactical baton used for controlled defence, interruption and close-range protection.",
+    core: "He plans to minimise uncertainty, but faces situations no plan can fully control.",
+    traits: ["Strategic", "Disciplined", "Analytical", "Authoritative", "Reserved"]
   },
   {
     name: "Madeline Ong",
+    fullName: "Madeline Ong",
     group: "Truth Seeker",
-    role: "Vice Leader · Police Officer",
+    role: "Vice Leader · TS02 · Police Officer",
     age: "31",
+    dateOfBirth: "21 April 1995",
+    height: "166 cm",
+    weight: "58 kg",
     epithet: "The Resonant Mediator",
-    appearance: "Female, 166 cm, fit build, shoulder-length dark hair, dark-brown eyes and fair-medium skin. Usually wears professional casual clothing.",
-    personality: "Cheerful, friendly, sociable, humorous and diplomatic, while remaining authoritative when necessary.",
+    appearance: "Shoulder-length dark hair, dark-brown eyes, fair-medium complexion, fit healthy build and friendly features. Dresses in practical professional casual clothing.",
+    personality: "Cheerful, friendly, approachable, humorous, empathetic, diplomatic, observant, responsible, assertive and adaptable. Balances Arifin's serious leadership.",
+    background: "A Malaysian police officer and vice leader of the Truth Seeker.",
+    family: "Father: Ong Wei Kiat, 64, retired civil engineer. Mother: Lim Siew Ling, 61, former primary school teacher. Older brother: Ong Wei Jian, 35, financial analyst.",
+    speech: "Warm, cheerful, natural and expressive, often using humour. In-game dialogue is in English.",
     ability: "Resonance Voice",
-    abilityDetail: "Produces controlled sound waves through her voice. She can communicate over extended distances, create concussive sound bursts, disrupt enemy balance and concentration, and generate short-lived resonance barriers.",
-    survival: "Can interrupt enemy attacks, create defensive sound barriers and support coordinated team movement.",
-    limitations: "Strong effects require controlled breathing. Excessive use strains her vocal system, while specialised countermeasures can reduce sound-based effects.",
-    weapon: "Resonance Baton",
-    weaponDetail: "A reinforced baton that amplifies controlled vibration and defensive resonance.",
-    background: "A police officer who balances Arifin's serious leadership style with humour and approachability. She values cooperation and tries to prevent unnecessary conflict.",
-    traits: ["Friendly", "Empathetic", "Diplomatic", "Responsible"]
+    abilityDetail: "Projects her voice with controlled resonance. It can support communication, calming effects and disruption of an opponent's concentration.",
+    survival: "Can interrupt concentration, coordinate allies and create opportunities to disengage.",
+    limitations: "It is not mind control. It cannot guarantee calmness, obedience or attraction. The target must be able to hear her. Environmental noise and barriers reduce effectiveness. Excessive use can strain her vocal cords. No physical soundwave knockback or concussive barrier is established.",
+    weapon: "Reinforced Police Baton",
+    weaponDetail: "A reinforced police baton suited to controlled defensive fighting and law-enforcement-style techniques.",
+    core: "She wants nobody left behind, but cannot protect everyone.",
+    traits: ["Friendly", "Empathetic", "Diplomatic", "Responsible", "Adaptable"]
   },
   {
     name: "Intan Najwa",
+    fullName: "Intan Najwa binti Mohd Faizal",
     group: "Truth Seeker",
-    role: "Combat Specialist · Grab Rider",
+    role: "Combat Specialist · TS03 · Grab Rider",
     age: "29",
+    dateOfBirth: "17 July 1997",
+    height: "168 cm",
+    weight: "58 kg",
     epithet: "The Relentless Rider",
-    appearance: "Female, 168 cm, 58 kg, athletic build, dark-brown ponytail, dark-brown eyes, medium tan skin and sharp features. Usually wears a riding jacket, dark T-shirt, cargo pants, boots or sneakers and a crossbody bag. Uses a full-face helmet when working.",
-    personality: "Fearless, direct, hot-headed, independent, protective, competitive and street-smart. She dislikes sitting still and prefers travelling by motorcycle.",
-    ability: "Impact Drive",
-    abilityDetail: "Builds kinetic force through continuous movement, channels force into punches, kicks and weapon strikes, performs explosive directional charges, releases concentrated impact waves and maintains momentum through difficult terrain.",
-    survival: "Rapid movement helps her avoid attacks, break through enemy encirclement and escape dangerous positions using accumulated momentum.",
-    limitations: "Substantial force requires movement to build. Sudden stops reduce accumulated momentum, while poorly controlled charges can leave her vulnerable.",
-    weapon: "Breaker Spear",
-    weaponDetail: "A reinforced spear designed for thrusting attacks, controlled charges and impact release.",
-    background: "A Grab rider who prefers action over unnecessary discussion. She is resourceful and protective of her companions, although impatience can sometimes get the better of her.",
-    traits: ["Fearless", "Independent", "Competitive", "Resourceful"]
+    appearance: "Medium-length dark-brown hair usually tied in a ponytail, dark-brown eyes, sharp confident features, medium tan skin and athletic toned build. Wears a black motorcycle riding jacket, dark fitted T-shirt, cargo pants, motorcycle boots or sneakers and a sling bag. Uses a full-face helmet when working.",
+    personality: "Fearless, straightforward, hot-headed, independent, protective, competitive, street-smart, active, confident, impatient, loyal and resourceful.",
+    background: "Works as a Grab Rider and is the Truth Seeker's combat specialist.",
+    family: "Father: Mohd Faizal Rahman, 57, self-employed motorcycle mechanic. Mother: Norhayati Hassan, 54, food stall operator. Younger brother: Amirul Hakim, 24, technical assistant.",
+    speech: "Confident and direct. Folds her arms when disagreeing, taps her fingers when thinking, dislikes sitting still and prefers travelling by motorcycle.",
+    ability: "Momentum Drive",
+    abilityDetail: "Manipulates her own physical movement momentum to amplify, maintain or redirect movement. It supports acceleration, powerful strikes, redirection and preservation of momentum.",
+    survival: "Enables rapid repositioning, evasive movement and breaking through enemy encirclement.",
+    limitations: "Primarily affects her own body, not unrestricted external objects. It requires movement and coordination. Poor timing, loss of balance and physical strain can reduce effectiveness.",
+    weapon: "Kinetic Knuckle Guards",
+    weaponDetail: "Reinforced knuckle guards designed for close-range striking. Her combat style combines punches, elbows, kicks and rapid repositioning.",
+    core: "She wants to be strong enough to protect everyone, but must accept that she also needs protection.",
+    traits: ["Fearless", "Independent", "Street-smart", "Competitive", "Loyal"]
   },
   {
     name: "Ravin Kumar",
+    fullName: "Ravin Kumar",
     group: "Truth Seeker",
-    role: "Healer Specialist · Restaurant Manager",
+    role: "Healer Specialist · TS04 · Restaurant Manager",
     age: "26",
+    dateOfBirth: "9 October 2000",
+    height: "172 cm",
+    weight: "70 kg",
     epithet: "The Gentle Lifeline",
-    appearance: "Male, 172 cm, average build, short black hair, dark-brown eyes and medium-brown skin. Has a friendly expression and usually wears simple clothing.",
-    personality: "Patient, caring, easygoing, humorous, calming, practical and self-sacrificing.",
+    appearance: "Short neat black hair, dark-brown eyes, friendly features, medium-brown complexion and average build. Usually wears simple casual clothing.",
+    personality: "Patient, caring, easygoing, humorous, practical, empathetic, protective, reliable, adaptable and self-sacrificing. He may neglect his own needs.",
+    background: "McDonald's Restaurant Manager in Seksyen 3, Shah Alam. His Truth Seeker responsibilities focus on injury assessment, stabilisation and emergency support.",
+    family: "Father: Kumar Rajan, 57, factory maintenance supervisor. Mother: Meena Devi, 54, administrative assistant. Younger sister: Priya Kumar, 22, university student.",
+    speech: "Friendly, warm, conversational and reassuring, with light humour. In-game dialogue is in English.",
     ability: "Vital Touch",
-    abilityDetail: "Accelerates natural recovery, closes wounds, stabilises injured allies, restores limited physical stamina, detects serious biological damage through touch and creates a temporary vitality field around nearby allies.",
-    survival: "Can stabilise himself and teammates, reduce the consequences of non-lethal injuries and provide support during prolonged exploration.",
-    limitations: "Cannot resurrect the dead or restore lost limbs. Severe injuries require substantial effort and time. Healing places demands on his concentration and stamina.",
-    weapon: "Vitalis Staff",
-    weaponDetail: "A reinforced medical combat staff capable of channelling his healing ability and delivering defensive strikes.",
-    background: "A McDonald's manager in Seksyen 3. He is often willing to put other people's needs before his own and prefers resolving problems peacefully.",
-    traits: ["Caring", "Patient", "Reliable", "Selfless"]
+    abilityDetail: "Operates during Blood Hour. Through direct physical contact, Ravin can detect physical injuries and temporarily stabilise bleeding, pain and certain shock symptoms.",
+    survival: "Allows him to assess injuries, stabilise himself or allies and support emergency casualty evacuation.",
+    limitations: "It does not regenerate tissue, regrow limbs, cure diseases or infections, reverse permanent damage, resurrect the dead or guarantee survival. Direct contact is required. Prolonged use causes exhaustion.",
+    weapon: "Rescue Combat Knife",
+    weaponDetail: "A compact rescue and utility knife for emergency tasks and basic self-defence. He is not a dedicated frontline fighter.",
+    core: "He wants to help everyone, but must learn that he cannot sacrifice himself every time.",
+    traits: ["Patient", "Caring", "Practical", "Empathetic", "Reliable"]
   },
   {
     name: "Afiq Ahnaf",
+    fullName: "Afiq Ahnaf",
     group: "Truth Seeker",
-    role: "Member · Secondary School Student",
+    role: "TS05 · Form 5 Student",
     age: "17",
+    dateOfBirth: "16 May 2009",
+    height: "170 cm",
+    weight: "58 kg",
     epithet: "The Flashing Rookie",
-    appearance: "Male, 170 cm, slim build, messy black hair and dark-brown eyes. Usually wears casual clothing, a backpack and sneakers.",
-    personality: "Curious, impulsive, adventurous, sometimes overconfident and excitable, with teenage maturity.",
+    appearance: "Messy black hair, dark-brown eyes, youthful face, medium complexion and slim teenage build. Usually wears graphic T-shirts, hoodies, casual trousers or jeans, sneakers, backpack and lightweight jacket.",
+    personality: "Curious, impulsive, adventurous, excitable, competitive, sometimes overconfident, energetic, inexperienced, loyal and independent-minded. His maturity remains appropriate for a teenager.",
+    background: "A Form 5 secondary school student in Shah Alam and member TS05 of the Truth Seeker.",
+    family: "Father: Ahmad Zulkarnain, 47, electrical technician. Mother: Siti Mariam, 45, administrative officer. Older sister: Nurul Aina, 21, university student.",
+    speech: "Energetic, casual, expressive and youthful. In-game dialogue is in English.",
     ability: "Flash Step",
-    abilityDetail: "Performs short bursts of extremely rapid movement, changes position before an opponent can react, creates brief afterimages, performs rapid directional evasions and can carry a limited amount of equipment during movement.",
-    survival: "Excellent emergency evasion. He can escape surrounding enemies and reposition to safer locations.",
-    limitations: "Requires awareness of the destination. He cannot freely pass through solid objects, and repeated rapid movement causes physical strain.",
-    weapon: "Twin Flash Knives",
-    weaponDetail: "Two compact knives designed for rapid close-range attacks.",
-    background: "A high school student whose youthful enthusiasm sometimes leads him into situations beyond his experience. He is still learning how to judge risks and responsibilities.",
-    traits: ["Energetic", "Adventurous", "Curious", "Impulsive"]
+    abilityDetail: "Enables rapid physical movement over short distances. He physically traverses the path rather than teleporting.",
+    survival: "Allows emergency evasion, escape from surrounding enemies and rapid repositioning.",
+    limitations: "Cannot pass through solid obstacles. Repeated use causes dizziness and muscle strain. It does not increase durability or provide invulnerability. He needs awareness of his destination.",
+    weapon: "Twin Tactical Knives",
+    weaponDetail: "Two lightweight tactical knives for close-range combat and opportunistic attacks.",
+    traits: ["Curious", "Impulsive", "Adventurous", "Energetic", "Loyal"]
   },
   {
     name: "Izzati Syafiqah",
+    fullName: "Izzati Syafiqah",
     group: "Truth Seeker",
-    role: "Member · Secondary School Student",
+    role: "TS06 · Form 5 Student",
     age: "17",
+    dateOfBirth: "22 January 2009",
+    height: "156 cm",
+    weight: "47 kg",
     epithet: "The Silent Warning",
-    appearance: "Female, 156 cm, petite build, long black hair usually tied back and dark-brown eyes. Usually wears simple casual clothing and carries a backpack.",
-    personality: "Observant, thoughtful, cautious, quiet around strangers, curious and sometimes brave.",
+    appearance: "Long black hair usually tied back, dark-brown eyes, youthful soft features, light-medium complexion and petite slim build. Usually wears simple comfortable tops, trousers or jeans, lightweight jackets or cardigans, sneakers and a practical backpack.",
+    personality: "Observant, thoughtful, cautious, quiet around strangers, curious, analytical, empathetic, patient, independent, brave and sensitive. Sometimes self-doubting.",
+    background: "A Form 5 secondary school student in Shah Alam and member TS06 of the Truth Seeker.",
+    family: "Father: Mohd Syafiq Rahman, 48, bank administrative officer. Mother: Nor Azlina Hassan, 45, primary school teacher. Younger brother: Danish Hakim, 13, secondary school student.",
     ability: "Danger Sense",
-    abilityDetail: "Detects hostile intent and imminent threats, senses dangerous movement before an attack reaches her, identifies hidden enemies through supernatural warning signals, distinguishes levels of immediate danger and may eventually extend warnings to nearby allies.",
-    survival: "Provides early warning, helps avoid ambushes and allows safer exploration and navigation.",
-    limitations: "Does not reveal every detail about a threat and cannot automatically prevent an attack. Multiple simultaneous threats may overwhelm her senses.",
-    weapon: "Silent Recurve Bow",
-    weaponDetail: "A compact supernatural bow with specialised arrows designed for accurate ranged combat.",
-    background: "A high school student who prefers to understand a situation before acting. Despite occasional self-doubt, she can demonstrate considerable courage when others are in danger.",
-    traits: ["Observant", "Thoughtful", "Cautious", "Empathetic"]
+    abilityDetail: "Provides an intuitive warning about nearby physical threats and may indicate the general direction of danger.",
+    survival: "Helps her recognise ambushes, anticipate dangerous movement and make safer decisions.",
+    limitations: "Does not reveal an attacker's identity, read minds or provide a detailed view of the future. It does not guarantee evasion; her physical reaction speed remains relevant. Multiple or unpredictable threats may confuse or overwhelm the warning.",
+    weapon: "Tactical Short Spear",
+    weaponDetail: "A lightweight short spear for maintaining distance, intercepting attacks and exploiting openings.",
+    traits: ["Observant", "Thoughtful", "Cautious", "Analytical", "Empathetic"]
   },
   {
     name: "Dato' Samad Said",
+    fullName: "Dato' Samad Said",
     group: "Blood Cult",
-    role: "Core Member · Politician",
+    role: "Core Member · BS01 · Politician",
     age: "33",
+    dateOfBirth: "12 December 1992",
+    height: "181 cm",
+    weight: "79 kg",
     epithet: "The Crimson Authority",
-    appearance: "Male, 181 cm, athletic build, neat black hair and sharp dark eyes. Usually wears expensive tailored suits and a luxury wristwatch.",
-    personality: "Ruthless, ambitious, calculating, manipulative, publicly charming and professional, and unforgiving of betrayal.",
+    appearance: "Neatly styled black hair, dark sharp eyes, handsome mature features, medium complexion and athletic, well-maintained build. Wears tailored formal suits, a luxury watch, polished shoes and refined accessories.",
+    personality: "Ruthless, ambitious, calculating, manipulative, charismatic, authoritative, patient, opportunistic, secretive, controlling, unforgiving and pragmatic.",
+    background: "A politician and core member BS01 of the Blood Cult.",
+    family: "Father: Dato' Ahmad Zainuddin, 65, retired senior government officer. Mother: Datin Salmah Iskandar, 62, retired school principal. Younger brother: Farid Zainuddin, 29, corporate legal executive.",
+    speech: "Polished, persuasive, measured, controlled and professional. In-game dialogue is in English.",
     ability: "Authority Seal",
-    abilityDetail: "Creates supernatural command seals on selected surfaces or targets, establishes temporary restrictions within marked areas, weakens movement through designated zones, creates defensive boundaries and reinforces his physical resistance through a personal seal.",
-    survival: "Defensive zones restrict enemy approach. Personal reinforcement improves resistance, and controlled boundaries can provide retreat routes.",
-    limitations: "Seals require deliberate placement. Strong enemies can break or resist them, and multiple active seals require concentration.",
-    weapon: "Sovereign Cane-Saber",
-    weaponDetail: "A formal cane concealing a balanced blade, designed for controlled combat and defensive techniques.",
-    background: "A politician who presents himself as polished and professional. His ambition, patience and ability to read social situations make him a calculating figure.",
-    traits: ["Ambitious", "Charismatic", "Calculating", "Manipulative"]
+    abilityDetail: "During Blood Hour, marks an individual or object within his field of vision. Short verbal commands apply temporary psychological pressure that can disrupt concentration or movement.",
+    survival: "Can interfere with an opponent's ability to act and create opportunities for controlled retreat or counteraction.",
+    limitations: "It is not absolute control. It cannot force complex actions or self-harm. Targets can resist, and effects are temporary.",
+    weapon: "Ceremonial Tactical Cane",
+    weaponDetail: "A reinforced ceremonial cane suitable for controlled defensive and close-range techniques.",
+    traits: ["Ruthless", "Ambitious", "Calculating", "Charismatic", "Manipulative"]
   },
   {
     name: "Amelia Erina",
+    fullName: "Amelia Erina",
     group: "Blood Cult",
-    role: "Core Member · Bar Owner",
+    role: "Core Member · BS02 · Bar Owner",
     age: "31",
+    dateOfBirth: "6 April 1995",
+    height: "168 cm",
+    weight: "58 kg",
     epithet: "The Velvet Siren",
-    appearance: "Female, 168 cm, curvaceous build, long wavy dark-brown hair and expressive dark eyes. Her fashion style is glamorous and mature.",
-    personality: "Seductive, charismatic, socially intelligent, flirtatious but difficult to read, skilled at identifying weaknesses and patient in planning.",
+    appearance: "Long dark-brown wavy hair, expressive dark eyes, elegant mature features, light-medium complexion and curvaceous, well-maintained build. Wears sophisticated glamorous fashion, dresses, fitted tops and skirts, heels and jewellery.",
+    personality: "Seductive, charismatic, socially intelligent, flirtatious, observant, manipulative, patient, secretive, adaptable, confident, calculating and self-controlled.",
+    background: "A bar owner and core member BS02 of the Blood Cult.",
+    family: "Father: Erina Hamzah, 63, retired hotel operations manager. Mother: Mariam Abdullah, 60, former boutique owner. Younger sister: Alya Erina, 26, marketing executive.",
+    speech: "Smooth, warm, confident and charming, often with playful teasing. In-game dialogue is in English.",
     ability: "Allure Veil",
-    abilityDetail: "Alters the perception of nearby observers, creates convincing visual distractions, conceals her movement, produces temporary false images of herself and interferes with enemy target recognition.",
-    survival: "Makes it difficult for enemies to track her accurately, provides opportunities to retreat and can confuse multiple attackers.",
-    limitations: "Does not provide complete invisibility. Strong perception abilities may detect inconsistencies, and direct physical attacks remain dangerous.",
-    weapon: "Velvet Fang Daggers",
-    weaponDetail: "A pair of elegant, narrow daggers designed for precise close combat.",
-    background: "A bar owner who uses charm and social awareness to navigate conversations and influence interactions. She rarely reveals more about herself than necessary.",
-    traits: ["Charismatic", "Confident", "Observant", "Secretive"]
+    abilityDetail: "During Blood Hour, subtly alters how noticeable her presence is. It can attract or suppress attention and help her move without drawing notice.",
+    survival: "Can reduce the likelihood of drawing attention and create opportunities to reposition or withdraw.",
+    limitations: "It is not invisibility, appearance alteration, mind control, forced attraction or obedience. Concentration is required; close scrutiny and familiar observers can reduce effectiveness.",
+    weapon: "Concealed Stiletto Dagger",
+    weaponDetail: "A compact close-range defensive weapon. She avoids prolonged confrontation.",
+    traits: ["Charismatic", "Socially Intelligent", "Manipulative", "Confident", "Secretive"]
   },
   {
     name: "Maria Akesah",
+    fullName: "Maria Akesah",
     group: "Blood Cult",
-    role: "Core Member · Unemployed",
-    age: "25",
+    role: "Core Member · BS03 · Private Security Operations Manager",
+    age: "35",
+    dateOfBirth: "18 August 1991",
+    height: "170 cm",
+    weight: "63 kg",
     epithet: "The Crimson Reaper",
-    appearance: "Female, 159 cm, average build, messy long black hair and half-lidded dark eyes. Usually wears an oversized hoodie, loose pants and slippers.",
-    personality: "Lazy, unmotivated, enjoys sleeping and resting, casual, blunt and dislikes being controlled. She may be sharper than she first appears.",
-    ability: "Dream Fold",
-    abilityDetail: "Creates temporary dream-like spaces within a limited area, distorts enemy spatial perception, produces temporary defensive dream constructs, creates short-range displacement through folded dream space and can trap an opponent's perception in a controlled illusion.",
-    survival: "Can create emergency defensive barriers, reposition through short-range displacement and make herself more difficult to target.",
-    limitations: "Strong effects require concentration. Large dream spaces are difficult to maintain, and physical damage remains dangerous if her defensive constructs are broken.",
-    weapon: "Somnolent Scythe",
-    weaponDetail: "A compact supernatural scythe with a curved blade, designed for sweeping attacks and defensive spacing.",
-    background: "An unemployed member who values rest and personal freedom. Her casual attitude can make her appear less serious than she actually is.",
-    traits: ["Casual", "Blunt", "Independent", "Unpredictable"]
+    appearance: "Shoulder-length dark black hair, usually in a practical ponytail, dark-brown eyes, mature sharp features, medium tan complexion and athletic sturdy build. Wears dark fitted shirts, tactical trousers, durable boots, lightweight jackets, practical belts and a wristwatch.",
+    personality: "Disciplined, pragmatic, intimidating, independent, decisive, observant, resourceful, suspicious, competitive, resilient, ruthless and private.",
+    background: "A private security company operations manager and core member BS03 of the Blood Cult.",
+    family: "Father: Akbar Hassan, 67, retired factory supervisor. Mother: Zaleha Osman, 63, former food stall operator. Older brother: Azman Akesah, 39, lorry fleet supervisor.",
+    speech: "Firm, controlled, authoritative, direct and practical. In-game dialogue is in English.",
+    ability: "Blood Manipulation",
+    abilityDetail: "During Blood Hour, controls available blood as material to form temporary shapes, projectiles, restraints and weapon reinforcement.",
+    survival: "Can form temporary defensive or offensive constructs from available blood material.",
+    limitations: "Cannot create unlimited blood or control blood inside living bodies. Available quantity determines scale. Constructs are temporary and require concentration; fatigue limits prolonged use.",
+    weapon: "Tactical Kukri",
+    weaponDetail: "A robust forward-curved close-range weapon. Her style combines direct, disciplined kukri techniques with Blood Manipulation.",
+    traits: ["Disciplined", "Pragmatic", "Decisive", "Resourceful", "Private"]
   },
   {
     name: "Dr. Ishvana Rai",
+    fullName: "Dr. Ishvana Rai",
     group: "Blood Cult",
-    role: "Core Member · Medical Doctor",
+    role: "Core Member · BS04 · Medical Doctor",
     age: "28",
+    dateOfBirth: "11 November 1997",
+    height: "165 cm",
+    weight: "53 kg",
     epithet: "The Biological Observer",
-    appearance: "Female, 165 cm, slim build, shoulder-length black hair, dark-brown eyes and medium complexion. Wears professional clothing and spectacles when reading or working.",
-    personality: "Intelligent, observant, calm, logical, clinical and professional, with a strong interest in the human body.",
+    appearance: "Shoulder-length black hair, dark-brown eyes, mature intelligent features, medium complexion and slim build. Wears spectacles when reading or performing detailed work and neat professional clothing.",
+    personality: "Intelligent, observant, calm, logical, clinical, professional, curious, methodical, patient, independent, reserved, pragmatic and emotionally restrained.",
+    background: "A medical doctor and core member BS04 of the Blood Cult.",
+    family: "Father: Rajan Rai, 61, retired university lecturer. Mother: Kavitha Raman, 58, pharmacist. Younger brother: Arjun Rai, 24, biomedical laboratory assistant.",
+    speech: "Calm, precise, professional and clinical. In-game dialogue is in English.",
     ability: "Biological Analysis",
-    abilityDetail: "Analyses biological structures through observation and proximity, identifies injuries and abnormal biological functions, detects toxins and biological abnormalities, develops temporary adaptive resistance to previously analysed biological threats and can disrupt certain biological functions through controlled contact.",
-    survival: "Can detect internal injuries, identify biological threats and develop limited resistance to recognised toxins and biological attacks.",
-    limitations: "Requires sufficient biological information. She cannot instantly understand every unknown species, and adaptive resistance does not provide universal immunity.",
-    weapon: "Anatomist's Glaive",
-    weaponDetail: "A specialised polearm with a narrow reinforced blade, designed for controlled reach and precise attacks.",
-    background: "A doctor who approaches unfamiliar biological phenomena with scientific curiosity. She prefers careful examination and reliable observations over assumptions.",
-    traits: ["Intelligent", "Logical", "Methodical", "Observant"]
+    abilityDetail: "Examines biological subjects, physical conditions and certain abnormalities or weaknesses through close observation or contact. It can assist with injury assessment and monster analysis.",
+    survival: "Can help assess biological conditions and provide information useful for evaluating a subject.",
+    limitations: "It does not heal, read minds or guarantee weaknesses. Unfamiliar or complex biology may require time and produce incomplete information.",
+    weapon: "Medical Tactical Scalpel Set",
+    weaponDetail: "A compact set of medical and utility instruments adapted for emergency self-defence. It is not a dedicated combat weapon.",
+    traits: ["Intelligent", "Observant", "Logical", "Methodical", "Clinical"]
   },
   {
     name: "Liora Venn",
+    fullName: "Liora Venn",
     group: "Blood Hour Entities",
-    role: "Neutral Entity · Trader",
-    age: "Not publicly established",
-    epithet: "The Merchant of the Red Exchange",
-    appearance: "Female non-human entity with long silver-white hair, golden eyes with a subtle spiral pattern and pale skin with a faint supernatural glow. She wears elegant dark merchant clothing. Her shadow occasionally moves independently.",
-    personality: "Friendly, communicative, business-smart, enjoys negotiating, slightly mischievous but professional.",
+    role: "Neutral Entity · Trader · The Red Exchange",
+    age: "Not established",
+    epithet: "Not established",
+    appearance: "Long silver-white hair, golden eyes with a subtle spiral pattern, pale skin with a faint supernatural glow and elegant dark merchant clothing. Her shadow occasionally moves independently.",
+    personality: "Friendly, communicative, business-smart, enjoys negotiating, slightly mischievous but professional in transactions.",
+    background: "A non-human Blood Hour entity created by the phenomenon as a commercial intermediary. She is not an ordinary human and does not belong to any faction. Her expanded personal history, relationships, motivations and epithet have not been established.",
     ability: "Ledger Sight",
-    abilityDetail: "Perceives the nature, quality and approximate value of Blood Hour materials. She can identify monster materials, detect material quality and rarity, recognise unusual crafting properties, maintain supernatural transaction records and prevent ordinary fraudulent transactions within her market.",
-    survival: "Her role is primarily commercial and informational. She evaluates materials and facilitates transactions rather than acting as a conventional combatant.",
+    abilityDetail: "Perceives the nature, quality and approximate value of Blood Hour materials. She can identify monster materials, detect quality and rarity, recognise unusual crafting properties and maintain supernatural transaction records.",
+    survival: "Her ability supports material evaluation and legitimate transactions within her market.",
     limitations: "She cannot control the minds or decisions of customers.",
-    weapon: "Not publicly established",
-    weaponDetail: "No personal weapon has been established in the public record.",
-    background: "A non-human entity created by the Blood Hour phenomenon as a commercial intermediary. She has no ordinary human history and operates The Red Exchange, a supernatural market inside an abandoned commercial building in Section 7, Shah Alam.",
-    services: "Buys and sells monster materials, sells equipment and Blood Hour goods, evaluates materials and facilitates trading. The market contains trading counters, equipment stalls, storage facilities, negotiation areas and a connection to Maera's workshop.",
-    traits: ["Friendly", "Professional", "Business-minded", "Mischievous"]
+    weapon: "No confirmed personal weapon",
+    weaponDetail: "No personal weapon has been established in the current canon.",
+    services: "Operates The Red Exchange, a supernatural market inside an abandoned commercial building in Seksyen 7. Services include buying and selling monster materials, selling equipment and Blood Hour goods, evaluating materials and facilitating trading.",
+    traits: ["Friendly", "Communicative", "Business-Smart", "Mischievous", "Professional"],
+    status: "Baseline canon established. Expanded personal details and epithet are pending."
   },
   {
     name: "Maera Veyr",
+    fullName: "Maera Veyr",
     group: "Blood Hour Entities",
-    role: "Neutral Entity · Blacksmith",
-    age: "Not publicly established",
-    epithet: "The Forge-Born Blacksmith",
-    appearance: "Female non-human entity with long black-red hair, amber eyes resembling glowing embers, subtle iron-like markings on her skin and an athletic, sturdy build. She wears practical dark clothing and a blacksmith apron, with an occasional ember-like glow around her skin.",
-    personality: "Stern, serious, direct, focused, dislikes time-wasters, values quality materials and takes pride in craftsmanship.",
+    role: "Neutral Entity · Blacksmith · The Ember Anvil",
+    age: "Not established",
+    epithet: "Not established",
+    appearance: "Long black-red hair, amber eyes resembling glowing embers, subtle iron-like markings on her skin, athletic sturdy build, practical dark clothing and a blacksmith apron. Her skin occasionally has an ember-like glow.",
+    personality: "Stern, serious, direct and focused. Dislikes time-wasters, values quality materials and takes pride in craftsmanship.",
+    background: "A non-human Forge-Born entity created through the supernatural nature of Blood Hour. She has no ordinary human history. Her expanded personal details, relationships, motivations and epithet have not been established.",
     ability: "Forge Resonance",
     abilityDetail: "Understands the internal structure of monster materials, combines compatible supernatural materials, repairs damaged Blood Hour weapons, enhances equipment, detects crafting instability and produces special weapons from rare materials.",
-    survival: "Her role is centred on equipment creation, repair and enhancement. Her knowledge of supernatural materials makes her an important service provider to Awakened individuals.",
-    limitations: "Her ability is not unlimited. She cannot create valuable materials from nothing.",
-    weapon: "Not publicly established",
-    weaponDetail: "No personal weapon has been established in the public record.",
-    background: "A Forge-Born entity created through the supernatural nature of Blood Hour. She has no ordinary human history and exists to process Blood Hour materials and create equipment suitable for Awakened individuals.",
+    survival: "Her ability supports equipment repair, enhancement and the production of suitable equipment for Awakened individuals.",
+    limitations: "She cannot create valuable materials from nothing. Suitable materials, compatibility and legitimate crafting processes are required.",
+    weapon: "No confirmed personal weapon",
+    weaponDetail: "No personal weapon has been established in the current canon.",
     services: "Operates The Ember Anvil, a supernatural blacksmith workshop connected to The Red Exchange. Services include weapon crafting, repairs, enhancement, special weapon creation and material evaluation.",
-    traits: ["Stern", "Focused", "Direct", "Professional"]
+    traits: ["Stern", "Serious", "Direct", "Focused", "Professional"],
+    status: "Baseline canon established. Expanded personal details and epithet are pending."
   }
 ];
+
+/* =========================================
+   FACTION ARCHIVE
+   ========================================= */
 
 const factions = [
   {
     number: "01",
     name: "UiTM Student Group",
     type: "Independent Awakened Group",
-    summary: "Six Awakened students from UiTM Shah Alam who form an independent group rather than initially joining either the Truth Seeker or the Blood Cult.",
-    overview: "The UiTM Student Group consists of six students whose ordinary university lives have become connected to Blood Hour. Their backgrounds, courses and personalities differ, meaning that their responses to the phenomenon are not identical. They are not initially affiliated with the Truth Seeker or the Blood Cult.",
-    purpose: "Their group identity is based on their shared connection as UiTM students. The public record does not establish them as a formal organisation with a wider political or institutional structure.",
+    summary: "Six Awakened students from UiTM Shah Alam who are not initially affiliated with the Truth Seeker or Blood Cult.",
+    overview: "The UiTM Student Group consists of six Awakened students from UiTM Shah Alam. They are an independent group and are not initially affiliated with either the Truth Seeker or the Blood Cult.",
+    purpose: "Their group identity is based on their shared connection as UiTM students. Their members have different backgrounds, studies and personalities.",
     members: ["Keisha Ellyana", "Isyirah Amara", "Khairun Amara", "Badrul Aktar", "Hani Marissa", "Putri Imelda"],
     note: "The group is independent. Its members should not automatically be treated as members of another faction."
   },
@@ -478,40 +600,40 @@ const factions = [
     number: "02",
     name: "Truth Seeker",
     type: "Investigation and Opposition Group",
-    summary: "Six Awakened dedicated to uncovering the truth behind Blood Hour and ultimately stopping the phenomenon.",
-    overview: "The Truth Seeker is a group of six Awakened individuals with a shared objective: understand the mystery behind Blood Hour and find a way to stop it. Its members come from different occupations and backgrounds, bringing different skills and perspectives to the group's work.",
-    purpose: "The group seeks reliable information about the phenomenon. Its activities are centred on investigation, cooperation, survival and the pursuit of answers rather than personal exploitation.",
-    leadership: "Arifin Badar serves as the leader, while Madeline Ong is the vice leader. Their roles provide the group with a leadership structure that combines strategic direction with communication and coordination.",
+    summary: "Six Awakened dedicated to uncovering the truth behind Blood Hour and ultimately stopping it.",
+    overview: "The Truth Seeker is a group of six Awakened individuals with a shared objective: understand the mystery behind Blood Hour and find a way to stop it.",
+    purpose: "The group investigates Blood Hour, seeks reliable information, protects people from exploitation and opposes the Blood Cult.",
+    leadership: "Arifin Badar serves as the leader (TS01), while Madeline Ong is the vice leader (TS02).",
     members: ["Arifin Badar", "Madeline Ong", "Intan Najwa", "Ravin Kumar", "Afiq Ahnaf", "Izzati Syafiqah"],
-    note: "The Truth Seeker strongly opposes the Blood Cult's established activities."
+    note: "The Truth Seeker strongly opposes the established activities of the Blood Cult."
   },
   {
     number: "03",
     name: "Blood Cult",
     type: "Hostile Awakened Group",
-    summary: "Four Awakened who exploit Blood Hour for personal interests through manipulation, sabotage and murder.",
-    overview: "The Blood Cult is a group of four Awakened whose activities exploit the unusual conditions created by Blood Hour. Their methods include manipulation, sabotage and murder, placing them in direct opposition to the Truth Seeker.",
-    purpose: "Unlike groups seeking to understand or stop the phenomenon, the Blood Cult uses the circumstances of Blood Hour to pursue personal interests. Its members have different occupations and personalities, but their established activities create a serious threat to others.",
-    leadership: "The public record identifies four core members. A formal leadership hierarchy beyond their established membership has not been confirmed in this archive.",
+    summary: "Four Awakened who exploit Blood Hour through manipulation, sabotage and murder.",
+    overview: "The Blood Cult consists of four Awakened individuals whose activities exploit the unusual conditions created by Blood Hour.",
+    purpose: "Their established activities include manipulation, sabotage and murder. They strongly obstruct the Truth Seeker.",
+    leadership: "The current public record confirms four core members. A formal leadership hierarchy beyond the established membership has not been confirmed.",
     members: ["Dato' Samad Said", "Amelia Erina", "Maria Akesah", "Dr. Ishvana Rai"],
-    note: "The Blood Cult is not the same organisation as the Truth Seeker and should not be treated as a neutral group."
+    note: "The Blood Cult is a hostile group and is not affiliated with the Truth Seeker."
   },
   {
     number: "04",
     name: "Blood Hour Entities",
     type: "Non-Human Neutral Entities",
-    summary: "Individuals who exist specifically within Blood Hour and disappear when the phenomenon ends.",
-    overview: "Blood Hour entities are not ordinary humans and are not Awakened. They exist specifically within the supernatural period and disappear when Blood Hour ends. Their functions are connected to the environment and services available during the phenomenon.",
-    purpose: "The known entities in this archive provide specialised services to Awakened individuals. Liora Venn operates as a trader, while Maera Veyr provides blacksmithing, repairs and equipment-related services.",
+    summary: "Non-human entities who exist specifically within Blood Hour and disappear when the phenomenon ends.",
+    overview: "Blood Hour entities are not ordinary humans and are not Awakened. They exist specifically within Blood Hour and disappear when it ends.",
+    purpose: "The known entities provide specialised services to Awakened individuals. Liora Venn operates as a trader, while Maera Veyr provides blacksmithing and equipment-related services.",
     leadership: "No faction leadership structure is established. The known entities maintain a professional relationship and operate independently of the human factions.",
     members: ["Liora Venn", "Maera Veyr"],
     note: "Both known entities are neutral and do not belong to the UiTM Student Group, Truth Seeker or Blood Cult."
   }
 ];
 
-// ============================================
-// HELPERS
-// ============================================
+/* =========================================
+   HELPERS
+   ========================================= */
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -534,7 +656,6 @@ function listHTML(items) {
 function openModal(content) {
   const modal = $("#readingModal");
   const container = $("#modalContent");
-
   if (!modal || !container) return;
 
   container.innerHTML = content;
@@ -553,9 +674,9 @@ function closeModal() {
   document.body.classList.remove("modal-open");
 }
 
-// ============================================
-// STATIC RULES
-// ============================================
+/* =========================================
+   STATIC RULES
+   ========================================= */
 
 function renderRules() {
   const grid = $("#rulesGrid");
@@ -566,14 +687,13 @@ function renderRules() {
       <span class="card-number">${escapeHTML(rule.number)}</span>
       <h3>${escapeHTML(rule.title)}</h3>
       <p>${escapeHTML(rule.text)}</p>
-      <p class="rule-extra">${escapeHTML(rule.extra)}</p>
     </article>
   `).join("");
 }
 
-// ============================================
-// STATIC ABILITY STAGES
-// ============================================
+/* =========================================
+   STATIC ABILITY STAGES
+   ========================================= */
 
 function renderStages() {
   const grid = $("#stagesGrid");
@@ -589,9 +709,9 @@ function renderStages() {
   `).join("");
 }
 
-// ============================================
-// TOWER ARCHIVE — CLICK TO READ
-// ============================================
+/* =========================================
+   TOWER ARCHIVE — CLICK TO READ
+   ========================================= */
 
 function towerProfile(tower) {
   return `
@@ -622,7 +742,7 @@ function towerProfile(tower) {
     </section>
 
     <div class="modal-callout">
-      <p>${escapeHTML(tower.note || "This entry contains public information only.")}</p>
+      <p>This public entry intentionally excludes tower progression and undisclosed story information.</p>
     </div>
   `;
 }
@@ -646,14 +766,12 @@ function renderTowers() {
   grid.addEventListener("click", event => {
     const card = event.target.closest("[data-tower]");
     if (!card) return;
-
     const tower = towers.find(item => item.number === card.dataset.tower);
     if (tower) openModal(towerProfile(tower));
   });
 
   grid.addEventListener("keydown", event => {
     if (event.key !== "Enter" && event.key !== " ") return;
-
     const card = event.target.closest("[data-tower]");
     if (!card) return;
 
@@ -663,9 +781,9 @@ function renderTowers() {
   });
 }
 
-// ============================================
-// CHARACTER ARCHIVE — CLICK TO READ
-// ============================================
+/* =========================================
+   CHARACTER ARCHIVE — CLICK TO READ
+   ========================================= */
 
 const characterGroups = [
   "All",
@@ -684,7 +802,8 @@ function renderCharacterFilters() {
   container.innerHTML = characterGroups.map(group => `
     <button type="button"
       class="${group === activeCharacterGroup ? "active" : ""}"
-      data-group="${escapeHTML(group)}">
+      data-group="${escapeHTML(group)}"
+      aria-pressed="${group === activeCharacterGroup}">
       ${escapeHTML(group)}
     </button>
   `).join("");
@@ -696,7 +815,9 @@ function renderCharacterFilters() {
     activeCharacterGroup = button.dataset.group;
 
     $$("#characterFilters button").forEach(item => {
-      item.classList.toggle("active", item.dataset.group === activeCharacterGroup);
+      const isActive = item.dataset.group === activeCharacterGroup;
+      item.classList.toggle("active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
     });
 
     renderCharacters();
@@ -704,8 +825,8 @@ function renderCharacterFilters() {
 }
 
 function characterCard(character) {
-  const ageText = character.age === "Not publicly established"
-    ? "Age not publicly established"
+  const ageText = character.age === "Not established"
+    ? "Age not established"
     : `${character.age} years old`;
 
   return `
@@ -726,12 +847,16 @@ function characterCard(character) {
 
 function characterProfile(character) {
   const facts = [
+    ["FULL NAME", character.fullName],
     ["GROUP", character.group],
     ["ROLE", character.role],
     ["AGE", character.age],
+    ["DATE OF BIRTH", character.dateOfBirth],
+    ["HEIGHT", character.height],
+    ["WEIGHT", character.weight],
     ["ABILITY", character.ability],
     ["PERSONAL WEAPON", character.weapon]
-  ];
+  ].filter(([, value]) => value);
 
   return `
     <p class="modal-eyebrow">${escapeHTML(character.group)}</p>
@@ -768,15 +893,38 @@ function characterProfile(character) {
       <p>${escapeHTML(character.background)}</p>
     </section>
 
+    ${character.family ? `
+      <section class="modal-section">
+        <h3>Family</h3>
+        <p>${escapeHTML(character.family)}</p>
+      </section>
+    ` : ""}
+
+    ${character.education ? `
+      <section class="modal-section">
+        <h3>Education</h3>
+        <p>${escapeHTML(character.education)}</p>
+      </section>
+    ` : ""}
+
+    ${character.speech ? `
+      <section class="modal-section">
+        <h3>Speech and Behaviour</h3>
+        <p>${escapeHTML(character.speech)}</p>
+      </section>
+    ` : ""}
+
     <section class="modal-section">
       <h3>Ability · ${escapeHTML(character.ability)}</h3>
       <p>${escapeHTML(character.abilityDetail)}</p>
     </section>
 
-    <section class="modal-section">
-      <h3>Survival Applications</h3>
-      <p>${escapeHTML(character.survival)}</p>
-    </section>
+    ${character.survival ? `
+      <section class="modal-section">
+        <h3>Survival Applications</h3>
+        <p>${escapeHTML(character.survival)}</p>
+      </section>
+    ` : ""}
 
     <section class="modal-section">
       <h3>Limitations</h3>
@@ -788,11 +936,25 @@ function characterProfile(character) {
       <p>${escapeHTML(character.weaponDetail)}</p>
     </section>
 
+    ${character.core ? `
+      <div class="modal-callout">
+        <strong>CORE CONTRADICTION</strong>
+        <p>${escapeHTML(character.core)}</p>
+      </div>
+    ` : ""}
+
     ${character.services ? `
       <section class="modal-section">
         <h3>Services and Operations</h3>
         <p>${escapeHTML(character.services)}</p>
       </section>
+    ` : ""}
+
+    ${character.status ? `
+      <div class="modal-callout">
+        <strong>CANON STATUS</strong>
+        <p>${escapeHTML(character.status)}</p>
+      </div>
     ` : ""}
   `;
 }
@@ -801,7 +963,6 @@ function renderCharacters() {
   const grid = $("#characterGrid");
   const search = $("#characterSearch");
   const count = $("#characterCount");
-
   if (!grid) return;
 
   const query = (search?.value || "").trim().toLowerCase();
@@ -809,6 +970,7 @@ function renderCharacters() {
   const filtered = characters.filter(character => {
     const searchable = [
       character.name,
+      character.fullName,
       character.group,
       character.role,
       character.age,
@@ -829,9 +991,7 @@ function renderCharacters() {
     return matchesSearch && matchesGroup;
   });
 
-  if (count) {
-    count.textContent = `${filtered.length} PROFILES`;
-  }
+  if (count) count.textContent = `${filtered.length} PROFILES`;
 
   if (!filtered.length) {
     grid.innerHTML = `
@@ -850,15 +1010,14 @@ function renderCharacters() {
       const character = characters.find(item =>
         item.name === button.dataset.character
       );
-
       if (character) openModal(characterProfile(character));
     });
   });
 }
 
-// ============================================
-// FACTION ARCHIVE — CLICK TO READ
-// ============================================
+/* =========================================
+   FACTION ARCHIVE — CLICK TO READ
+   ========================================= */
 
 function factionProfile(faction) {
   return `
@@ -913,14 +1072,12 @@ function renderFactions() {
   grid.addEventListener("click", event => {
     const card = event.target.closest("[data-faction]");
     if (!card) return;
-
     const faction = factions.find(item => item.number === card.dataset.faction);
     if (faction) openModal(factionProfile(faction));
   });
 
   grid.addEventListener("keydown", event => {
     if (event.key !== "Enter" && event.key !== " ") return;
-
     const card = event.target.closest("[data-faction]");
     if (!card) return;
 
@@ -930,14 +1087,13 @@ function renderFactions() {
   });
 }
 
-// ============================================
-// NAVIGATION
-// ============================================
+/* =========================================
+   NAVIGATION
+   ========================================= */
 
 function initialiseNavigation() {
   const toggle = $("#menuToggle");
   const nav = $("#mainNav");
-
   if (!toggle || !nav) return;
 
   toggle.addEventListener("click", () => {
@@ -953,9 +1109,9 @@ function initialiseNavigation() {
   });
 }
 
-// ============================================
-// MODAL CONTROLS
-// ============================================
+/* =========================================
+   MODAL CONTROLS
+   ========================================= */
 
 function initialiseModal() {
   const modal = $("#readingModal");
@@ -970,9 +1126,9 @@ function initialiseModal() {
   });
 }
 
-// ============================================
-// INITIALISE
-// ============================================
+/* =========================================
+   INITIALISE
+   ========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
   renderRules();
