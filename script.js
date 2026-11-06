@@ -1,3 +1,4 @@
+
 /* BLOOD HOUR MASTER LORE v1.1 — PUBLIC ARCHIVE
    Public-facing data only. No internal character identifiers are displayed.
    Tower floor layouts, encounters, rewards and Truth Fragment spoilers are intentionally excluded. */
@@ -78,15 +79,47 @@ function renderTowers(){const grid=$("#towerGrid");if(!grid)return;grid.innerHTM
 
 const characterGroups=["All","UiTM Student Group","Truth Seeker","Blood Cult","Blood Hour Entities"];
 let activeCharacterGroup="All";
+
 function renderCharacterFilters(){const el=$("#characterFilters");if(!el)return;el.innerHTML=characterGroups.map(g=>`<button type="button" class="${g===activeCharacterGroup?"active":""}" data-group="${esc(g)}" aria-pressed="${g===activeCharacterGroup}">${esc(g)}</button>`).join("");el.addEventListener("click",e=>{const b=e.target.closest("button[data-group]");if(!b)return;activeCharacterGroup=b.dataset.group;$$("button[data-group]",el).forEach(x=>{const active=x.dataset.group===activeCharacterGroup;x.classList.toggle("active",active);x.setAttribute("aria-pressed",String(active));});renderCharacters();});}
-function characterCard(c){return `<article class="character-card"><button class="character-open" type="button" data-character="${esc(c.name)}"><span class="character-group">${esc(c.group)}</span><span class="character-name">${esc(c.name)}</span><span class="character-epithet">${esc(c.epithet)}</span><span class="character-ability">Ability · ${esc(c.ability)}</span><span class="character-weapon">Weapon · ${esc(c.weapon)}</span><span class="character-read">READ PROFILE ↗</span></button></article>`;}
+
+const characterImages = {
+ "Keisha Ellyana": "assets/characters/keisha/17477.png",
+ "Isyirah Amara": "assets/characters/isyirah/isyirah.png",
+ "Khairun Amara": "assets/characters/khairun/khairun.png",
+ "Badrul Aktar": "assets/characters/badrul/badrul.png",
+ "Hani Marissa": "assets/characters/hani/hani.png",
+ "Putri Imelda": "assets/characters/putri/putri.png"
+};
+
+function characterCard(c) {
+ const image = characterImages[c.name];
+ return `
+  <article class="character-card ${image ? "character-card-featured" : ""}">
+   <button class="character-open" type="button" data-character="${esc(c.name)}">
+    <div class="character-card-info">
+     <span class="character-group">${esc(c.group)}</span>
+     <span class="character-name">${esc(c.name)}</span>
+     <span class="character-epithet">${esc(c.epithet)}</span>
+     <span class="character-ability"><strong>ABILITY</strong><br>${esc(c.ability)}</span>
+     <span class="character-weapon"><strong>WEAPON</strong><br>${esc(c.weapon)}</span>
+     <span class="character-read">READ PROFILE ↗</span>
+    </div>
+    ${image ? `<div class="character-card-image"><img src="${image}" alt="${esc(c.name)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>` : ""}
+   </button>
+  </article>
+ `;
+}
+
 function characterProfile(c){
  const facts=[["GROUP",c.group],["ROLE",c.role],["AGE",c.age],["DATE OF BIRTH",c.dob],["OCCUPATION",c.occupation],["PROGRAMME",c.programme],["ABILITY",c.ability],["PERSONAL WEAPON",c.weapon]].filter(x=>x[1]);
  const section=(title,body)=>body?`<section class="modal-section"><h3>${esc(title)}</h3><p>${esc(body)}</p></section>`:"";
  return `<p class="modal-eyebrow">${esc(c.group)}</p><h2 id="modalTitle">${esc(c.name)}</h2><p class="modal-subtitle">${esc(c.epithet)}</p><div class="modal-divider"></div><div class="modal-facts">${facts.map(([a,b])=>`<div class="modal-fact"><small>${esc(a)}</small><span>${esc(b)}</span></div>`).join("")}</div>${section("Appearance",c.appearance)}${section("Personality",c.personality)}${section("Ability · "+c.ability,c.abilityDetail)}${section("Limitations",c.limitations)}${section("Personal Weapon · "+c.weapon,c.weaponDetail)}${section("Services and Operations",c.services)}<div class="modal-callout"><p>Only details established in the current public canon are shown. Unestablished information is intentionally left unspecified.</p></div>`;
 }
+
 function renderCharacters(){const grid=$("#characterGrid"),search=$("#characterSearch"),count=$("#characterCount");if(!grid)return;const q=(search?.value||"").trim().toLowerCase();const filtered=characters.filter(c=>{const hay=[c.name,c.group,c.role,c.occupation,c.ability,c.weapon,c.epithet,c.appearance,c.personality,c.abilityDetail].join(" ").toLowerCase();return hay.includes(q)&&(activeCharacterGroup==="All"||c.group===activeCharacterGroup);});if(count)count.textContent=`${filtered.length} PROFILES`;if(!filtered.length){grid.innerHTML='<div class="empty-state"><h3>No matching profiles found.</h3><p>Try another name, ability, weapon or group.</p></div>';return;}grid.innerHTML=filtered.map(characterCard).join("");$$(".character-open",grid).forEach(b=>b.addEventListener("click",()=>{const c=characters.find(x=>x.name===b.dataset.character);if(c)openModal(characterProfile(c));}));}
+
 function factionProfile(f){return `<p class="modal-eyebrow">FACTION ARCHIVE · ${esc(f.number)}</p><h2 id="modalTitle">${esc(f.name)}</h2><p class="modal-subtitle">${esc(f.type)}</p><div class="modal-divider"></div><section class="modal-section"><h3>Overview</h3><p>${esc(f.overview)}</p></section>${f.purpose?`<section class="modal-section"><h3>Purpose and Activities</h3><p>${esc(f.purpose)}</p></section>`:""}${f.leadership?`<section class="modal-section"><h3>Leadership</h3><p>${esc(f.leadership)}</p></section>`:""}<section class="modal-section"><h3>Known Members</h3>${listHTML(f.members)}</section><div class="modal-callout"><p>${esc(f.note)}</p></div>`;}
 function renderFactions(){const grid=$("#factionGrid");if(!grid)return;grid.innerHTML=factions.map(f=>`<article class="faction-card" tabindex="0" role="button" data-faction="${esc(f.number)}" aria-label="Read ${esc(f.name)}"><span class="faction-index">FACTION · ${esc(f.number)}</span><h3>${esc(f.name)}</h3><p>${esc(f.summary)}</p><span class="card-read">READ FACTION ARCHIVE ↗</span></article>`).join("");const open=card=>{const f=factions.find(x=>x.number===card.dataset.faction);if(f)openModal(factionProfile(f));};grid.addEventListener("click",e=>{const card=e.target.closest("[data-faction]");if(card)open(card);});grid.addEventListener("keydown",e=>{if(e.key!=="Enter"&&e.key!==" ")return;const card=e.target.closest("[data-faction]");if(card){e.preventDefault();open(card);}});}
+
 function initialise(){const toggle=$("#menuToggle"),nav=$("#mainNav");if(toggle&&nav){toggle.addEventListener("click",()=>{const opened=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(opened));});$$("a",nav).forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");}));}const modal=$("#readingModal");if(modal){$$("[data-close-modal]",modal).forEach(x=>x.addEventListener("click",closeModal));document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});}$("#characterSearch")?.addEventListener("input",renderCharacters);}
 document.addEventListener("DOMContentLoaded",()=>{renderRules();renderStages();renderTowers();renderCharacterFilters();renderCharacters();renderFactions();initialise();});
