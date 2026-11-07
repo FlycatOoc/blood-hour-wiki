@@ -1151,3 +1151,87 @@ button,input{font:inherit;color:inherit}
     animation:none!important
   }
 }
+
+/* =========================
+   BLOOD HOUR MUSIC PLAYER
+   ========================= */
+
+.bh-music-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  background: #170b12;
+  border: 1px solid #9e354b;
+  color: #e8c6a7;
+  font: 600 10px "DM Sans", Arial, sans-serif;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: 0 5px 25px #0009;
+  transition: .2s ease;
+}
+
+.bh-music-toggle:hover {
+  background: #35101e;
+  border-color: #d84b5e;
+}
+
+.bh-music-toggle.active {
+  border-color: #d84b5e;
+  color: #ff7180;
+}
+
+.bh-music-icon {
+  font-size: 18px;
+}
+
+.bh-music-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 85px;
+  z-index: 999;
+  width: min(350px, calc(100vw - 32px));
+  padding: 16px;
+  background: #110a10;
+  border: 1px solid #713043;
+  box-shadow: 0 10px 35px #000b;
+}
+
+.bh-music-heading {
+  margin-bottom: 12px;
+  color: #e8c6a7;
+  font: 600 12px "Cinzel", Georgia, serif;
+  letter-spacing: 1.5px;
+}
+
+.bh-music-panel iframe {
+  display: block;
+  width: 100%;
+  height: 150px;
+  border: 0;
+  background: #090609;
+}
+
+.bh-music-note {
+  margin: 10px 0 0;
+  color: #a995a0;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .bh-music-toggle {
+    right: 14px;
+    bottom: 14px;
+    padding: 11px 14px;
+  }
+
+  .bh-music-panel {
+    right: 14px;
+    bottom: 72px;
+  }
+}
