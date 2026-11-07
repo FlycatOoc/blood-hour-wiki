@@ -1152,86 +1152,71 @@ button,input{font:inherit;color:inherit}
   }
 }
 
+
 /* =========================
-   BLOOD HOUR MUSIC PLAYER
+   BLOOD HOUR HEADER MUSIC
    ========================= */
 
 .bh-music-toggle {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 1000;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 13px 18px;
-  background: #170b12;
-  border: 1px solid #9e354b;
-  color: #e8c6a7;
-  font: 600 10px "DM Sans", Arial, sans-serif;
-  letter-spacing: 1.5px;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  padding: 9px 12px;
+  margin-left: auto;
+  margin-right: 18px;
+  background: transparent;
+  border: 1px solid #713043;
+  color: #c9ad9c;
+  font: 600 9px "DM Sans", Arial, sans-serif;
+  letter-spacing: 1px;
   cursor: pointer;
-  box-shadow: 0 5px 25px #0009;
   transition: .2s ease;
 }
 
-.bh-music-toggle:hover {
-  background: #35101e;
-  border-color: #d84b5e;
-}
-
+.bh-music-toggle:hover,
 .bh-music-toggle.active {
+  background: #35101e;
   border-color: #d84b5e;
   color: #ff7180;
 }
 
 .bh-music-icon {
-  font-size: 18px;
+  font-size: 16px;
 }
 
-.bh-music-panel {
+.bh-hidden-audio {
   position: fixed;
-  right: 24px;
-  bottom: 85px;
-  z-index: 999;
-  width: min(350px, calc(100vw - 32px));
-  padding: 16px;
-  background: #110a10;
-  border: 1px solid #713043;
-  box-shadow: 0 10px 35px #000b;
-}
-
-.bh-music-heading {
-  margin-bottom: 12px;
-  color: #e8c6a7;
-  font: 600 12px "Cinzel", Georgia, serif;
-  letter-spacing: 1.5px;
-}
-
-.bh-music-panel iframe {
-  display: block;
-  width: 100%;
-  height: 150px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
   border: 0;
-  background: #090609;
 }
 
-.bh-music-note {
-  margin: 10px 0 0;
-  color: #a995a0;
-  font-size: 10px;
-  line-height: 1.6;
-}
-
-@media (max-width: 480px) {
+@media (max-width: 760px) {
   .bh-music-toggle {
-    right: 14px;
-    bottom: 14px;
-    padding: 11px 14px;
+    margin-left: auto;
+    margin-right: 12px;
+    padding: 9px 8px;
+    font-size: 8px;
+    gap: 5px;
   }
 
-  .bh-music-panel {
-    right: 14px;
-    bottom: 72px;
+  .bh-music-icon {
+    font-size: 15px;
+  }
+
+  .menu-toggle {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .bh-music-toggle {
+    padding: 8px 6px;
+    margin-right: 8px;
+    letter-spacing: .5px;
   }
 }
