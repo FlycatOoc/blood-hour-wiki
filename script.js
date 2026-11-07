@@ -1189,3 +1189,69 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFactions();
   initialise();
 });
+
+/* =========================
+   BLOOD HOUR MUSIC PLAYER
+   ========================= */
+
+function initialiseBloodHourMusic() {
+  const songId = "4da7576d-320f-44f6-a06d-7b5d15acb3cd";
+
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "bh-music-toggle";
+  toggle.innerHTML = `
+    <span class="bh-music-icon">♫</span>
+    <span class="bh-music-label">MUSIC: OFF</span>
+  `;
+  toggle.setAttribute("aria-expanded", "false");
+
+  const panel = document.createElement("div");
+  panel.className = "bh-music-panel";
+  panel.hidden = true;
+
+  panel.innerHTML = `
+    <div class="bh-music-heading">BLOOD HOUR SOUNDTRACK</div>
+    <iframe
+      title="Blood Hour soundtrack"
+      loading="lazy"
+      allow="autoplay; encrypted-media"
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+    <p class="bh-music-note">
+      Press Play in the player to listen.
+    </p>
+  `;
+
+  document.body.append(toggle, panel);
+
+  const label = toggle.querySelector(".bh-music-label");
+  const iframe = panel.querySelector("iframe");
+
+  toggle.addEventListener("click", () => {
+    const isOpening = panel.hidden;
+
+    if (isOpening) {
+      iframe.src = `https://suno.com/embed/${songId}`;
+      panel.hidden = false;
+      label.textContent = "MUSIC: ON";
+      toggle.classList.add("active");
+      toggle.setAttribute("aria-expanded", "true");
+    } else {
+      iframe.src = "about:blank";
+      panel.hidden = true;
+      label.textContent = "MUSIC: OFF";
+      toggle.classList.remove("active");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    initialiseBloodHourMusic
+  );
+} else {
+  initialiseBloodHourMusic();
+}
