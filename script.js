@@ -2,7 +2,7 @@
 /* =========================================================
    BLOOD HOUR WIKI
    PUBLIC ARCHIVE — MASTER LORE v1.1
-   Canonical character data and public world reference.
+   Character artwork cards — Responsive background layout.
 
    Public archive restrictions:
    - No tower floor layouts or floor counts.
@@ -10,6 +10,7 @@
    - No tower rewards or Truth Fragment spoilers.
    - Unestablished character details remain unspecified.
    ========================================================= */
+
 
 /* =========================
    WORLD RULES
@@ -107,8 +108,7 @@ const stages = [
 
 /* =========================
    THE SEVEN TOWERS
-   Public information only.
-   Do not add floor or encounter information.
+   PUBLIC INFORMATION ONLY
    ========================= */
 
 const towers = [
@@ -173,7 +173,7 @@ const towers = [
 
 /* =========================
    CHARACTER ARCHIVE
-   Current canon: Master Lore v1.1
+   MASTER LORE v1.1
    ========================= */
 
 const characters = [
@@ -560,15 +560,16 @@ const factions = [
 
 /* =========================
    CHARACTER IMAGES
+   UiTM artwork uploaded to GitHub
    ========================= */
 
 const characterImages = {
-  "Keisha Ellyana": "assets/characters/keisha/17477.png",
-  "Insyirah Amara": "assets/characters/insyirah/insyirah.png",
-  "Khairun Amara": "assets/characters/khairun/khairun.png",
-  "Badrul Aktar": "assets/characters/badrul/badrul.png",
-  "Hani Marissa": "assets/characters/hani/hani.png",
-  "Putri Imelda": "assets/characters/putri/putri.png"
+  "Keisha Ellyana": "assets/characters/uitm/keisha.png",
+  "Insyirah Amara": "assets/characters/uitm/insyirah.png",
+  "Khairun Amara": "assets/characters/uitm/khairun.png",
+  "Badrul Aktar": "assets/characters/uitm/badrul.png",
+  "Hani Marissa": "assets/characters/uitm/hani.png",
+  "Putri Imelda": "assets/characters/uitm/putri.png"
 };
 
 
@@ -592,7 +593,7 @@ const esc = value =>
   })[character]);
 
 const listHTML = items =>
-  `<ul>${items.map(item => `<li>${esc(item)}</li>`).join("")}</li>`;
+  `<ul>${items.map(item => `<li>${esc(item)}</li>`).join("")}</ul>`;
 
 
 /* =========================
@@ -812,22 +813,42 @@ function renderCharacterFilters() {
 
 /* =========================
    CHARACTER CARDS
+   Artwork is used as the card background.
+   Text remains on the left side.
    ========================= */
 
 function characterCard(character) {
-  const image = characterImages[character.name];
+  const image = characterImages[character.name] || "";
+  const programme = character.programme || character.occupation || character.role || "";
+  const age = character.age ? `${character.age} years old` : "";
+
+  const imageStyle = image
+    ? `style="--character-image: url('${esc(image)}')"`
+    : "";
 
   return `
-    <article class="character-card ${image ? "character-card-featured" : ""}">
+    <article class="character-card ${image ? "character-card-featured" : "character-card-standard"}">
       <button
         class="character-open"
         type="button"
         data-character="${esc(character.name)}"
+        aria-label="Read the full profile of ${esc(character.name)}"
+        ${imageStyle}
       >
-        <div class="character-card-info">
+        <span class="character-card-shade"></span>
+
+        <span class="character-card-info">
           <span class="character-group">
             ${esc(character.group)}
           </span>
+
+          ${programme ? `
+            <span class="character-role">
+              ${esc(programme)}
+            </span>
+          ` : ""}
+
+          <span class="character-card-divider"></span>
 
           <span class="character-name">
             ${esc(character.name)}
@@ -837,35 +858,23 @@ function characterCard(character) {
             ${esc(character.epithet)}
           </span>
 
-          <span class="character-ability">
-            <strong>ABILITY</strong><br>
-            ${esc(character.ability)}
-          </span>
+          <span class="character-card-divider character-card-divider-small"></span>
 
-          <span class="character-weapon">
-            <strong>WEAPON</strong><br>
-            ${esc(character.weapon)}
+          ${age ? `
+            <span class="character-age">
+              ${esc(age)}
+            </span>
+          ` : ""}
+
+          <span class="character-ability">
+            <strong>ABILITY</strong>
+            <span>${esc(character.ability || "Not established")}</span>
           </span>
 
           <span class="character-read">
-            READ PROFILE ↗
+            READ FULL PROFILE <span aria-hidden="true">↗</span>
           </span>
-        </div>
-
-        ${
-          image
-            ? `
-              <div class="character-card-image">
-                <img
-                  src="${esc(image)}"
-                  alt="${esc(character.name)}"
-                  loading="lazy"
-                  onerror="this.parentElement.style.display='none'"
-                >
-              </div>
-            `
-            : ""
-        }
+        </span>
       </button>
     </article>
   `;
