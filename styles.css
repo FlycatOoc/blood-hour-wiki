@@ -1,4 +1,3 @@
-
 :root {
   --bg:#090609;
   --bg2:#110a10;
@@ -1219,4 +1218,59 @@ button,input{font:inherit;color:inherit}
     margin-right: 8px;
     letter-spacing: .5px;
   }
+}
+
+
+/* =========================
+   FACTION SILHOUETTE BACKGROUNDS
+   ========================= */
+
+.faction-card{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12,5,10,.97) 0%,
+      rgba(15,6,12,.83) 48%,
+      rgba(15,6,12,.35) 100%
+    ),
+    var(--faction-art);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.faction-card:hover{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12,5,10,.95) 0%,
+      rgba(15,6,12,.78) 48%,
+      rgba(15,6,12,.30) 100%
+    ),
+    var(--faction-art);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+
+/* =========================
+   TOWER ARCHIVE MODAL BACKGROUND
+   ========================= */
+
+.reading-panel.has-tower-art{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13,7,12,.97) 0%,
+      rgba(13,7,12,.91) 45%,
+      rgba(13,7,12,.72) 100%
+    ),
+    var(--archive-background);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
