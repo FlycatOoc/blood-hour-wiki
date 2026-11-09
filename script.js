@@ -203,6 +203,7 @@ const characters = [
     age: "22",
     dob: "8 August 2004",
     occupation: "UiTM Shah Alam student",
+    programme: "Bachelor of Laws, Second Year",
     ability: "Lucky Shift",
     weapon: "Twin Crescent Blades",
     appearance: "A lively, sporty young woman with a casual style.",
@@ -267,8 +268,10 @@ const characters = [
     name: "Putri Imelda",
     group: "UiTM Student Group",
     epithet: "The Kinetic Brawler",
+    age: "22",
     dob: "3 June 2004",
     occupation: "UiTM Shah Alam student",
+    programme: "Bachelor of Sport Science, Second Year",
     ability: "Kinetic Burst",
     weapon: "Impact Tonfas",
     appearance: "Short sporty black hair, dark brown eyes, medium tan skin and an athletic toned build. Her established appearance includes sporty black clothing, a purple-and-black jacket, sunglasses and fingerless gloves.",
@@ -638,7 +641,7 @@ function closeModal() {
   if (!modal) return;
 
   modal.classList.remove("open");
-  modal.setAttribute("aria-hidden", "true");
+     modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 }
 
@@ -958,7 +961,7 @@ function characterProfile(character) {
     ${section(
       "Personal Weapon · " + character.weapon,
       character.weaponDetail
-    )}
+           )}
 
     ${section("Services and Operations", character.services)}
 
