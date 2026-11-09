@@ -114,6 +114,7 @@ const towers = [
   {
     number: "01",
     name: "Tower of Ruins",
+    image: "assets/characters/uitm/towerofruins.png",
     location: "UiTM Shah Alam",
     theme: "Ancient Civilization, Ruins, Decay and Undead Warriors",
     overview: "A mysterious tower connected to UiTM Shah Alam. Its public identity is associated with ancient civilisation, decayed ruins and an ancient atmosphere.",
@@ -122,6 +123,7 @@ const towers = [
   {
     number: "02",
     name: "Tower of Glass",
+    image: "assets/characters/uitm/towerofglass.png",
     location: "i-City, Seksyen 7, Shah Alam",
     theme: "Glass, Reflections, Crystals and Illusions",
     overview: "A mysterious tower associated with the glass and crystal environment of i-City, Seksyen 7.",
@@ -130,6 +132,7 @@ const towers = [
   {
     number: "03",
     name: "Tower of Verdant",
+    image: "assets/characters/uitm/towerofverdant.png",
     location: "Taman Botani Negara Shah Alam",
     theme: "Nature, Mutated Plants, Roots and Parasites",
     overview: "A tower connected to Taman Botani Negara Shah Alam and a supernatural natural environment.",
@@ -138,6 +141,7 @@ const towers = [
   {
     number: "04",
     name: "Tower of Depths",
+    image: "assets/characters/uitm/towerofdepths.png",
     location: "Taman Tasik Shah Alam, Seksyen 14",
     theme: "Deep Sea, Aquatic Creatures, Underwater Ruins and Abyss",
     overview: "A mysterious tower connected to Taman Tasik Shah Alam, Seksyen 14.",
@@ -146,6 +150,7 @@ const towers = [
   {
     number: "05",
     name: "Tower of Judgement",
+    image: "assets/characters/uitm/towerofjudgement.png",
     location: "Dataran Shah Alam",
     theme: "Gothic and Infernal",
     overview: "A tower associated with Dataran Shah Alam and a gothic, infernal identity.",
@@ -154,6 +159,7 @@ const towers = [
   {
     number: "06",
     name: "Tower of Iron",
+    image: "assets/characters/uitm/towerofiron.png",
     location: "Kompleks Sukan Shah Alam",
     theme: "Ancient Fortress, Mechanical Industry and Ancient War Machines",
     overview: "A tower connected to Kompleks Sukan Shah Alam.",
@@ -162,6 +168,7 @@ const towers = [
   {
     number: "07",
     name: "Tower of Silence",
+    image: "assets/characters/uitm/towerofsilence.png",
     location: "Setia City, Setia Alam",
     theme: "Forgotten World, Endless Void and Distorted Reality",
     overview: "A mysterious tower connected to Setia City, Setia Alam.",
@@ -497,6 +504,7 @@ const factions = [
   {
     number: "01",
     name: "UiTM Student Group",
+    image: "assets/characters/uitm/uitmsilhouette.png",
     type: "Independent Awakened Group",
     summary: "Six Awakened students from UiTM Shah Alam who are not initially affiliated with the Truth Seeker or Blood Cult.",
     overview: "An independent group of six Awakened students from UiTM Shah Alam. Its members share a university connection but have different backgrounds, studies and personalities.",
@@ -514,6 +522,7 @@ const factions = [
   {
     number: "02",
     name: "Truth Seeker",
+    image: "assets/characters/uitm/truthseekersilhouette.png",
     type: "Investigation and Opposition Group",
     summary: "Six Awakened dedicated to uncovering the truth behind Blood Hour and ultimately stopping it.",
     overview: "The Truth Seeker investigates the mystery behind Blood Hour and seeks a way to stop it permanently.",
@@ -532,6 +541,7 @@ const factions = [
   {
     number: "03",
     name: "Blood Cult",
+    image: "assets/characters/uitm/bloodcultsilhouette.png",
     type: "Hostile Awakened Group",
     summary: "Four Awakened who exploit Blood Hour through manipulation, sabotage and murder.",
     overview: "The Blood Cult consists of four Awakened individuals whose activities exploit the unusual conditions created by Blood Hour.",
@@ -547,6 +557,7 @@ const factions = [
   {
     number: "04",
     name: "Neutral Blood Hour Entities",
+    image: "assets/characters/uitm/neutralsilhouette.png",
     type: "Neutral Non-Human Entities",
     summary: "Non-human entities who exist specifically within Blood Hour and disappear when the phenomenon ends.",
     overview: "Blood Hour entities are not ordinary humans and are not Awakened. They exist specifically within Blood Hour and disappear when it ends.",
@@ -621,13 +632,28 @@ const listHTML = items =>
    MODAL
    ========================= */
 
-function openModal(content) {
+function openModal(content, backgroundImage = "") {
   const modal = $("#readingModal");
   const box = $("#modalContent");
+  const panel = $(".reading-panel", modal);
 
   if (!modal || !box) return;
 
   box.innerHTML = content;
+
+  if (panel) {
+    if (backgroundImage) {
+      panel.style.setProperty(
+        "--archive-background",
+        `url("${backgroundImage}")`
+      );
+      panel.classList.add("has-tower-art");
+    } else {
+      panel.style.removeProperty("--archive-background");
+      panel.classList.remove("has-tower-art");
+    }
+  }
+
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
@@ -641,7 +667,7 @@ function closeModal() {
   if (!modal) return;
 
   modal.classList.remove("open");
-     modal.setAttribute("aria-hidden", "true");
+  modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 }
 
@@ -761,7 +787,7 @@ function renderTowers() {
       item.number === card.dataset.tower
     );
 
-    if (tower) openModal(towerProfile(tower));
+    if (tower) openModal(towerProfile(tower), tower.image);
   };
 
   grid.addEventListener("click", event => {
@@ -1109,6 +1135,7 @@ function renderFactions() {
       role="button"
       data-faction="${esc(faction.number)}"
       aria-label="Read ${esc(faction.name)}"
+      style="--faction-art: url('${esc(faction.image)}')"
     >
       <span class="faction-index">
         FACTION · ${esc(faction.number)}
