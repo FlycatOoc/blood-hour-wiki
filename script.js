@@ -1,4 +1,3 @@
-
 /* =========================================================
    BLOOD HOUR WIKI
    PUBLIC ARCHIVE — MASTER LORE v1.1
@@ -560,16 +559,35 @@ const factions = [
 
 /* =========================
    CHARACTER IMAGES
-   UiTM artwork uploaded to GitHub
+   All character artwork
    ========================= */
 
 const characterImages = {
+  /* UiTM Student Group */
   "Keisha Ellyana": "assets/characters/uitm/keisha.png",
   "Insyirah Amara": "assets/characters/uitm/insyirah.png",
   "Khairun Amara": "assets/characters/uitm/khairun.png",
   "Badrul Aktar": "assets/characters/uitm/badrul.png",
   "Hani Marissa": "assets/characters/uitm/hani.png",
-  "Putri Imelda": "assets/characters/uitm/putri.png"
+  "Putri Imelda": "assets/characters/uitm/putri.png",
+
+  /* Truth Seeker */
+  "Arifin Badar": "assets/characters/uitm/ariffin.png",
+  "Madeline Ong": "assets/characters/uitm/madeline.png",
+  "Intan Najwa": "assets/characters/uitm/intan.png",
+  "Ravin Kumar": "assets/characters/uitm/ravin.png",
+  "Afiq Ahnaf": "assets/characters/uitm/afiq.png",
+  "Izzati Syafiqah": "assets/characters/uitm/Izzati.png",
+
+  /* Blood Cult */
+  "Dato' Samad Said": "assets/characters/uitm/samad.png",
+  "Amelia Erina": "assets/characters/uitm/amelia.png",
+  "Maria Akesah": "assets/characters/uitm/maria.png",
+  "Dr. Ishvana Rai": "assets/characters/uitm/ishvana.png",
+
+  /* Neutral Blood Hour Entities */
+  "Liora Venn": "assets/characters/uitm/liora.png",
+  "Maera Veyr": "assets/characters/uitm/maera.png"
 };
 
 
@@ -1174,6 +1192,8 @@ function initialise() {
     renderCharacters
   );
 }
+
+
 /* =========================
    INITIALISE WEBSITE
    ========================= */
